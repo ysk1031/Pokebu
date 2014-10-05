@@ -85,4 +85,8 @@ class PocketItemsController < UITableViewController
   def end_indicator
     @indicator.stopAnimating
   end
+
+  def viewWillAppear(animated)
+    self.navigationController.setToolbarHidden(true, animated: true)
+  end
 end
