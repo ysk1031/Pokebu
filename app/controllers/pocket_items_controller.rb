@@ -14,6 +14,8 @@ class PocketItemsController < UITableViewController
     @indicator.stopAnimating
 
     load_items
+
+    self.tableView.addGestureRecognizer(UILongPressGestureRecognizer.alloc.initWithTarget(self, action: 'long_press_row:'))
   end
 
   def load_items
@@ -35,6 +37,14 @@ class PocketItemsController < UITableViewController
     @page += 1
     load_items
     end_indicator
+  end
+
+  def long_press_row(recog)
+    if recog.state == UIGestureRecognizerStateBegan
+      indexPath = self.tableView.indexPathForRowAtPoint(recog.locationInView(self.tableView))
+      item = @items[indexPath.row]
+      p item
+    end
   end
 
   def tableView(tableView, numberOfRowsInSection: section)
