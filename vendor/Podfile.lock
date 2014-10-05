@@ -23,6 +23,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - AFNetworking (~> 2.4.1)
 
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
