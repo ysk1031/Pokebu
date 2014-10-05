@@ -43,7 +43,10 @@ class PocketItemsController < UITableViewController
     if recog.state == UIGestureRecognizerStateBegan
       indexPath = self.tableView.indexPathForRowAtPoint(recog.locationInView(self.tableView))
       item = @items[indexPath.row]
-      p item
+
+      pocket_web_view_controller = PocketWebViewController.new
+      pocket_web_view_controller.item = item
+      self.navigationController.pushViewController(pocket_web_view_controller, animated: true)
     end
   end
 
