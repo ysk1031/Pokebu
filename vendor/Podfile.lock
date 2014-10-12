@@ -20,12 +20,15 @@ PODS:
   - AFNetworking/UIKit (2.4.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - TUSafariActivity (1.0.1)
 
 DEPENDENCIES:
   - AFNetworking
   - AFNetworking (~> 2.4.1)
+  - TUSafariActivity
 
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
+  TUSafariActivity: b943269dc8763df4896ae194603e6c8e27493273
 
-COCOAPODS: 0.34.1
+COCOAPODS: 0.34.2
