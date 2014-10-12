@@ -25,9 +25,10 @@ class PocketItemsController < UITableViewController
         @last_items_size += items.size
         self.tableView.reloadData
       else
-        alert = UIAlertView.new
-        alert.title = 'エラー'
-        alert.message = error_message
+        alert = UIAlertView.new.tap do |a|
+          a.title = 'エラー'
+          a.message = error_message
+        end
         alert.show
       end
     end

@@ -21,7 +21,7 @@ class PocketItem
       begin
         if result.success?
           fetched_data = result.object['list'].values.sort{|a, b| a['sort_id'] <=> b['sort_id'] }
-          items = fetched_data.map{|data| PocketItem.new(data) }
+          items = fetched_data.map{|data| self.new(data) }
         elsif result.failure?
           error_message = result.error.localizedDescription
         else

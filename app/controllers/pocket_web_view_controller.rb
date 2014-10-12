@@ -46,7 +46,11 @@ class PocketWebViewController < UIViewController
   end
 
   def do_action
-
+    self.presentViewController(
+      UrlActionController.alloc.initWithActivities([item.title, item.url]),
+      animated: true,
+      completion: nil
+    )
   end
 
   def webViewDidFinishLoad(web_view)
