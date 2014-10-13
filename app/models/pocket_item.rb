@@ -1,5 +1,5 @@
 class PocketItem
-  attr_accessor :sort_id, :title, :url, :excerpt
+  attr_accessor :sort_id, :title, :url, :excerpt, :timestamp
 
   BASE_URL = 'https://getpocket.com/v3/get'
 
@@ -8,6 +8,11 @@ class PocketItem
     @title = data['resolved_title'].empty? ? data['given_title'] : data['resolved_title']
     @url = data['resolved_url']
     @excerpt = data['excerpt']
+    @timestamp = data['time_added'].to_i
+  end
+
+  def added_time
+    Time.at(@timestamp).timeAgo
   end
 
 
