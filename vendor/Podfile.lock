@@ -20,17 +20,20 @@ PODS:
   - AFNetworking/UIKit (2.4.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - NSDate+TimeAgo (1.0.3)
   - TTTAttributedLabel (1.10.1)
   - TUSafariActivity (1.0.1)
 
 DEPENDENCIES:
   - AFNetworking
   - AFNetworking (~> 2.4.1)
+  - NSDate+TimeAgo
   - TTTAttributedLabel
   - TUSafariActivity
 
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
+  NSDate+TimeAgo: f3533e0198fab05b716368b19f8c2185d53d6f3b
   TTTAttributedLabel: 94bb04f1e005616002dd2cee0262a0082e533627
   TUSafariActivity: b943269dc8763df4896ae194603e6c8e27493273
 

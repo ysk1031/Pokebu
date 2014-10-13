@@ -19,5 +19,6 @@ Motion::Project::App.setup do |app|
     pod 'AFNetworking'
     pod 'TUSafariActivity'
     pod 'TTTAttributedLabel'
+    pod 'NSDate+TimeAgo'
   end
 end
