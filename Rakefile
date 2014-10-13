@@ -18,5 +18,6 @@ Motion::Project::App.setup do |app|
   app.pods do
     pod 'AFNetworking'
     pod 'TUSafariActivity'
+    pod 'TTTAttributedLabel'
   end
 end
