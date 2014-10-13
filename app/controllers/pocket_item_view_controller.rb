@@ -6,6 +6,7 @@ class PocketItemViewController < UIViewController
 
     self.title = 'Item'
 
+    # ↓さすがに長過ぎるので、後でviewに分離する
     @action_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(
       UIBarButtonSystemItemAction, target: self, action: 'do_action'
     )
@@ -44,7 +45,7 @@ class PocketItemViewController < UIViewController
 
     excerpt_font = UIFont.systemFontOfSize(14)
     @excerpt_label = UILabel.new.tap do |l|
-      l.frame = [[20, @title_label.frame.origin.y + @title_label.frame.size.height + 10], [self.view.bounds.size.width - 40, 960]]
+      l.frame = [[20, @title_label.bottom + 10], [self.view.bounds.size.width - 40, 960]]
       l.textAlignment = NSTextAlignmentLeft
       l.lineBreakMode = NSLineBreakByTruncatingTail
       l.text = item.excerpt
@@ -56,7 +57,7 @@ class PocketItemViewController < UIViewController
 
     url_font = UIFont.systemFontOfSize(13)
     @url_label = UILabel.new.tap do |l|
-      l.frame = [[20, @excerpt_label.frame.origin.y + @excerpt_label.frame.size.height + 10], [self.view.bounds.size.width - 40, 960]]
+      l.frame = [[20, @excerpt_label.bottom + 10], [self.view.bounds.size.width - 40, 960]]
       l.textAlignment = NSTextAlignmentLeft
       l.lineBreakMode = NSLineBreakByCharWrapping
       l.text = item.url
@@ -68,19 +69,19 @@ class PocketItemViewController < UIViewController
     @item_body.addSubview(@url_label)
 
     @date_label = UILabel.new.tap do |l|
-      l.frame = [[20, @url_label.frame.origin.y + @url_label.frame.size.height + 5], [self.view.bounds.size.width - 40, 960]]
+      l.frame = [[20, @url_label.bottom + 5], [self.view.bounds.size.width - 40, 960]]
       l.textAlignment = NSTextAlignmentLeft
       l.lineBreakMode = NSLineBreakByCharWrapping
       l.text = "#{item.added_time}に追加"
       l.textColor = UIColor.grayColor
       l.font = url_font
-      l.numberOfLines = 0
+      l.numberOfLines = 1
       l.sizeToFit
     end
     @item_body.addSubview(@date_label)
 
     @border = UIView.new.tap do |v|
-      v.frame = [[5, @date_label.frame.origin.y + @date_label.frame.size.height + 10], [self.view.bounds.size.width - 10, 0.5]]
+      v.frame = [[5, @date_label.bottom + 10], [self.view.bounds.size.width - 10, 0.5]]
       v.backgroundColor = UIColor.grayColor
     end
     @item_body.addSubview(@border)
