@@ -6,9 +6,18 @@ class PocketItemViewController < UIViewController
 
     self.title = 'Item'
 
+    @action_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(
+      UIBarButtonSystemItemAction, target: self, action: 'do_action'
+    )
+    flexible_space = UIBarButtonItem.alloc.initWithBarButtonSystemItem(
+      UIBarButtonSystemItemFlexibleSpace, target: nil, action: nil
+    )
+
+    toolbar_items = [flexible_space, @action_button]
+
     self.navigationController.setToolbarHidden(false, animated: false)
     self.navigationController.toolbar.translucent = false
-    self.setToolbarItems([], animated: false)
+    self.setToolbarItems(toolbar_items, animated: false)
 
     @item_view = UIView.alloc.initWithFrame(self.view.bounds)
     @item_view.backgroundColor = UIColor.whiteColor
@@ -16,50 +25,65 @@ class PocketItemViewController < UIViewController
     @item_body = UIScrollView.new.tap{|v| v.frame = self.view.bounds }
     @item_view.addSubview(@item_body)
 
-
-    title_font = UIFont.systemFontOfSize(18)
-    range = item.title.rangeOfString(item.title)
+    # TTTAttributedLabel, UILabelの高さの調整、このやり方だと微妙そう...
     @title_label = TTTAttributedLabel.new.tap do |l|
       l.frame = [[15, 20], [self.view.bounds.size.width - 30, 960]]
       l.numberOfLines = 0
       l.textAlignment = NSTextAlignmentLeft
       l.lineBreakMode = NSLineBreakByWordWrapping
+      l.verticalAlignment = TTTAttributedLabelVerticalAlignmentCenter
       l.setText(item.title, afterInheritingLabelAttributesAndConfiguringWithBlock:
-        lambda do |str|
-          str.addAttribute(KCTFontAttributeName, value: title_font, range: range)
-          return str
-        end
+        lambda{|str| return str }
       )
       l.sizeToFit
     end
+    range = item.title.rangeOfString(item.title)
     @title_label.addLinkToURL(NSURL.URLWithString(item.url), withRange: range)
     @title_label.delegate = self
     @item_body.addSubview(@title_label)
 
     excerpt_font = UIFont.systemFontOfSize(14)
     @excerpt_label = UILabel.new.tap do |l|
-      l.frame = [[20, @title_label.bounds.size.height + 30], [self.view.bounds.size.width - 40, 960]]
-      l.numberOfLines = 0
+      l.frame = [[20, @title_label.frame.origin.y + @title_label.frame.size.height + 10], [self.view.bounds.size.width - 40, 960]]
       l.textAlignment = NSTextAlignmentLeft
-      l.lineBreakMode = NSLineBreakByWordWrapping
+      l.lineBreakMode = NSLineBreakByTruncatingTail
       l.text = item.excerpt
       l.font = excerpt_font
+      l.numberOfLines = 5
       l.sizeToFit
     end
     @item_body.addSubview(@excerpt_label)
 
     url_font = UIFont.systemFontOfSize(13)
     @url_label = UILabel.new.tap do |l|
-      l.frame = [[20, @title_label.bounds.size.height + @excerpt_label.bounds.size.height + 40], [self.view.bounds.size.width - 40, 960]]
-      l.numberOfLines = 0
+      l.frame = [[20, @excerpt_label.frame.origin.y + @excerpt_label.frame.size.height + 10], [self.view.bounds.size.width - 40, 960]]
       l.textAlignment = NSTextAlignmentLeft
-      l.lineBreakMode = NSLineBreakByWordWrapping
+      l.lineBreakMode = NSLineBreakByCharWrapping
       l.text = item.url
       l.textColor = UIColor.grayColor
       l.font = url_font
+      l.numberOfLines = 0
       l.sizeToFit
     end
     @item_body.addSubview(@url_label)
+
+    @date_label = UILabel.new.tap do |l|
+      l.frame = [[20, @url_label.frame.origin.y + @url_label.frame.size.height + 5], [self.view.bounds.size.width - 40, 960]]
+      l.textAlignment = NSTextAlignmentLeft
+      l.lineBreakMode = NSLineBreakByCharWrapping
+      l.text = "#{item.added_time}に追加"
+      l.textColor = UIColor.grayColor
+      l.font = url_font
+      l.numberOfLines = 0
+      l.sizeToFit
+    end
+    @item_body.addSubview(@date_label)
+
+    @border = UIView.new.tap do |v|
+      v.frame = [[5, @date_label.frame.origin.y + @date_label.frame.size.height + 10], [self.view.bounds.size.width - 10, 0.5]]
+      v.backgroundColor = UIColor.grayColor
+    end
+    @item_body.addSubview(@border)
 
     self.view.addSubview(@item_view)
   end
@@ -68,5 +92,13 @@ class PocketItemViewController < UIViewController
     pocket_web_view_controller = PocketWebViewController.new
     pocket_web_view_controller.item = item
     self.navigationController.pushViewController(pocket_web_view_controller, animated: true)
+  end
+
+  def do_action
+    self.presentViewController(
+      UrlActionController.alloc.initWithActivities([item.title, item.url]),
+      animated: true,
+      completion: nil
+    )
   end
 end
