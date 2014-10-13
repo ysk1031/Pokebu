@@ -66,6 +66,13 @@ class PocketItemsController < UITableViewController
     cell
   end
 
+  def tableView(tableView, didSelectRowAtIndexPath: indexPath)
+    item = @items[indexPath.row]
+    pocket_item_view_controller = PocketItemViewController.new.tap{|p| p.item = item }
+    self.navigationController.pushViewController(pocket_item_view_controller, animated: true)
+    self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+  end
+
   def scrollViewDidScroll(scrollView)
     if self.tableView.contentOffset.y >= self.tableView.contentSize.height - self.tableView.bounds.size.height
       return if @indicator.isAnimating
