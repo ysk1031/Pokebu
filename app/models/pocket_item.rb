@@ -1,5 +1,5 @@
 class PocketItem
-  attr_accessor :sort_id, :title, :url
+  attr_accessor :sort_id, :title, :url, :excerpt
 
   BASE_URL = 'https://getpocket.com/v3/get'
 
@@ -7,6 +7,7 @@ class PocketItem
     @sort_id = data['sort_id']
     @title = data['resolved_title'].empty? ? data['given_title'] : data['resolved_title']
     @url = data['resolved_url']
+    @excerpt = data['excerpt']
   end
 
 
