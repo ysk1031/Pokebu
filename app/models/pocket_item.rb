@@ -1,10 +1,10 @@
 class PocketItem
-  attr_accessor :sort_id, :title, :url, :excerpt, :timestamp
+  attr_accessor :id, :title, :url, :excerpt, :timestamp
 
   BASE_URL = 'https://getpocket.com/v3/get'
 
   def initialize(data)
-    @sort_id = data['sort_id']
+    @id = data['item_id']
     @title = data['resolved_title'].empty? ? data['given_title'] : data['resolved_title']
     @url = data['resolved_url']
     @excerpt = data['excerpt']
@@ -16,9 +16,15 @@ class PocketItem
   end
 
 
-  def self.fetch_items(fetch_count, offset, &block)
-    url = "#{BASE_URL}?consumer_key=#{ENV['POCKET_CONSUMER_KEY']}&access_token=#{ENV['POCKET_ACCESS_TOKEN']}" \
-      "&count=#{fetch_count}&offset=#{offset}&sort=newest"
+  def self.fetch_items(fetch_count, offset, since_time = nil, &block)
+    url =
+      if since_time.nil?
+        "#{BASE_URL}?consumer_key=#{ENV['POCKET_CONSUMER_KEY']}&access_token=#{ENV['POCKET_ACCESS_TOKEN']}" \
+        "&count=#{fetch_count}&offset=#{offset}&sort=newest"
+      else
+        "#{BASE_URL}?consumer_key=#{ENV['POCKET_CONSUMER_KEY']}&access_token=#{ENV['POCKET_ACCESS_TOKEN']}" \
+        "&since=#{since_time}&sort=newest"
+      end
 
     AFMotion::JSON.get(url) do |result|
       items = []
@@ -26,8 +32,10 @@ class PocketItem
 
       begin
         if result.success?
-          fetched_data = result.object['list'].values.sort{|a, b| a['sort_id'] <=> b['sort_id'] }
-          items = fetched_data.map{|data| self.new(data) }
+          if !result.object['list'].empty?
+            fetched_data = result.object['list'].values.sort{|a, b| a['sort_id'] <=> b['sort_id'] }
+            items = fetched_data.map{|data| self.new(data) }
+          end
         elsif result.failure?
           error_message = result.error.localizedDescription
         else

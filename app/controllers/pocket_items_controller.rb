@@ -13,7 +13,12 @@ class PocketItemsController < UITableViewController
     @indicator = UIActivityIndicatorView.alloc.initWithActivityIndicatorStyle(UIActivityIndicatorViewStyleGray)
     @indicator.stopAnimating
 
+    @last_fetch_time = Time.now.to_i
     load_items
+
+    self.refreshControl = UIRefreshControl.new.tap do |refresh|
+      refresh.addTarget(self, action: 'refresh_items', forControlEvents: UIControlEventValueChanged)
+    end
 
     self.tableView.addGestureRecognizer(UILongPressGestureRecognizer.alloc.initWithTarget(self, action: 'long_press_row:'))
   end
@@ -22,6 +27,7 @@ class PocketItemsController < UITableViewController
     PocketItem.fetch_items(READ_COUNT, @page * READ_COUNT) do |items, error_message|
       if error_message.nil?
         @items += items
+        @items.uniq!{|i| i.id }
         @last_items_size += items.size
         self.tableView.reloadData
       else
@@ -38,6 +44,28 @@ class PocketItemsController < UITableViewController
     @page += 1
     load_items
     end_indicator
+  end
+
+  def refresh_items
+    self.refreshControl.beginRefreshing
+
+    PocketItem.fetch_items((@page + 1) * READ_COUNT, 0, @last_fetch_time) do |items, error_message|
+      if error_message.nil?
+        if !items.empty? && items.first.id != @items.first.id
+          @items = items.concat(@items).uniq{|i| i.id }
+          self.tableView.reloadData
+        end
+      else
+        alert = UIAlertView.new.tap do |a|
+          a.title = 'エラー'
+          a.message = error_message
+        end
+        alert.show
+      end
+    end
+
+    @last_fetch_time = Time.now.to_i
+    self.refreshControl.endRefreshing
   end
 
   def long_press_row(recog)
