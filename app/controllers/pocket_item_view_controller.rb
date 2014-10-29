@@ -97,7 +97,7 @@ class PocketItemViewController < UIViewController
 
   def do_action
     self.presentViewController(
-      UrlActionController.alloc.initWithActivities([item.title, item.url]),
+      UrlActionController.alloc.initWithActivities([NSURL.URLWithString(item.url)]),
       animated: true,
       completion: nil
     )
