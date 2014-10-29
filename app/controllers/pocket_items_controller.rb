@@ -28,7 +28,7 @@ class PocketItemsController < UITableViewController
       if error_message.nil?
         @items += items
         @items.uniq!{|i| i.id }
-        @last_items_size += items.size
+        @last_items_size += items.count
         self.tableView.reloadData
       else
         alert = UIAlertView.new.tap do |a|
@@ -80,15 +80,23 @@ class PocketItemsController < UITableViewController
   end
 
   def tableView(tableView, numberOfRowsInSection: section)
-    @items.size
+    @items.count
+  end
+
+  def tableView(tableView, heightForRowAtIndexPath: indexPath)
+    60
   end
 
   def tableView(tableView, cellForRowAtIndexPath: indexPath)
+    item = @items[indexPath.row]
     cell = tableView.dequeueReusableCellWithIdentifier(ITEM_CELL_ID) ||
       UITableViewCell.alloc.initWithStyle(UITableViewCellStyleSubtitle, reuseIdentifier: ITEM_CELL_ID)
 
-    item = @items[indexPath.row]
+
     cell.textLabel.text = item.title
+    cell.textLabel.numberOfLines = 2
+    cell.textLabel.font = UIFont.systemFontOfSize(14)
+
     item.url =~ %r{\Ahttps?://((\w|-|.)+?)/}
     cell.detailTextLabel.text = $1
     cell
