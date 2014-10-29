@@ -19,5 +19,7 @@ Motion::Project::App.setup do |app|
     pod 'AFNetworking'
     pod 'TTTAttributedLabel'
     pod 'NSDate+TimeAgo'
+    pod 'HatenaBookmarkSDK', git: 'git@github.com:hatena/Hatena-Bookmark-iOS-SDK.git',
+      branch: 'prefixed-afnetworking'
   end
 end
