@@ -1,5 +1,7 @@
 class AppDelegate
   def application(application, didFinishLaunchingWithOptions:launchOptions)
+    initialize_hatebu_sdk
+
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
 
     pocket_items_controller = PocketItemsController.new
@@ -9,5 +11,12 @@ class AppDelegate
     @window.makeKeyAndVisible
 
     true
+  end
+
+  def initialize_hatebu_sdk
+    HTBHatenaBookmarkManager.sharedManager.setConsumerKey(
+      MY_ENV['hatebu']['consumer_key'],
+      consumerSecret: MY_ENV['hatebu']['consumer_secret']
+    )
   end
 end
