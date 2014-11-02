@@ -21,6 +21,10 @@ class PocketItemsController < UITableViewController
     end
 
     self.tableView.addGestureRecognizer(UILongPressGestureRecognizer.alloc.initWithTarget(self, action: 'long_press_row:'))
+
+    self.navigationItem.leftBarButtonItem = UIBarButtonItem.alloc.initWithTitle(
+      '設定', style: UIBarButtonItemStylePlain, target: self, action: 'open_setting'
+    )
   end
 
   def load_items
@@ -92,7 +96,6 @@ class PocketItemsController < UITableViewController
     cell = tableView.dequeueReusableCellWithIdentifier(ITEM_CELL_ID) ||
       UITableViewCell.alloc.initWithStyle(UITableViewCellStyleSubtitle, reuseIdentifier: ITEM_CELL_ID)
 
-
     cell.textLabel.text = item.title
     cell.textLabel.numberOfLines = 2
     cell.textLabel.font = UIFont.systemFontOfSize(14)
@@ -132,5 +135,15 @@ class PocketItemsController < UITableViewController
 
   def viewWillAppear(animated)
     self.navigationController.setToolbarHidden(true, animated: true)
+  end
+
+  def open_setting
+    settings_controller = SettingsController.new
+    setting_navi_controller = UINavigationController.alloc.initWithRootViewController(settings_controller)
+    self.presentViewController(
+      setting_navi_controller,
+      animated: true,
+      completion: nil
+    )
   end
 end
