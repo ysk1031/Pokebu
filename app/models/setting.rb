@@ -1,8 +1,8 @@
 class Setting
-  attr_accessor :title
+  attr_accessor :title, :action
 
   SETTING_INFOS = [
-    %w(はてなブックマーク hoge),
+    %w(はてなブックマークアカウント hatebu),
     %w(このアプリについて fuga)
   ]
 
