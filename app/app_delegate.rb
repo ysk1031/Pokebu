@@ -6,6 +6,7 @@ class AppDelegate
 
     pocket_items_controller = PocketItemsController.new
     navigation_controller = UINavigationController.alloc.initWithRootViewController(pocket_items_controller)
+    navigation_controller.navigationBar.translucent = false
 
     @window.rootViewController = navigation_controller
     @window.makeKeyAndVisible

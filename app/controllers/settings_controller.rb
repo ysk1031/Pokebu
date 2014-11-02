@@ -63,6 +63,7 @@ class SettingsController < UITableViewController
     NSNotificationCenter.defaultCenter.removeObserver(self, name: KHTBLoginStartNotification, object: nil)
     req = notification.object
     @hatebu_navi_controller = UINavigationController.alloc.initWithNavigationBarClass(HTBNavigationBar, toolbarClass: nil)
+    @hatebu_navi_controller.navigationBar.translucent = false
     hatebu_login_view_controller = HTBLoginWebViewController.alloc.initWithAuthorizationRequest(req)
     @hatebu_navi_controller.viewControllers = [hatebu_login_view_controller]
     self.presentViewController(@hatebu_navi_controller, animated: true, completion: nil)

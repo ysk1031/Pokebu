@@ -35,11 +35,7 @@ class PocketItemsController < UITableViewController
         @last_items_size += items.count
         self.tableView.reloadData
       else
-        alert = UIAlertView.new.tap do |a|
-          a.title = 'エラー'
-          a.message = error_message
-        end
-        alert.show
+        alert_failed_request error_message
       end
     end
   end
@@ -60,11 +56,7 @@ class PocketItemsController < UITableViewController
           self.tableView.reloadData
         end
       else
-        alert = UIAlertView.new.tap do |a|
-          a.title = 'エラー'
-          a.message = error_message
-        end
-        alert.show
+        alert_failed_request error_message
       end
     end
 
@@ -137,9 +129,25 @@ class PocketItemsController < UITableViewController
     self.navigationController.setToolbarHidden(true, animated: true)
   end
 
+  def alert_failed_request(error_message)
+    alert_controller = UIAlertController.alertControllerWithTitle(
+      'エラー',
+      message: error_message,
+      preferredStyle: UIAlertControllerStyleAlert
+    )
+    alert_action = UIAlertAction.actionWithTitle(
+      'OK',
+      style: UIAlertActionStyleDefault,
+      handler: nil
+    )
+    alert_controller.addAction(alert_action)
+    self.presentViewController(alert_controller, animated: true, completion: nil)
+  end
+
   def open_setting
     settings_controller = SettingsController.new
     setting_navi_controller = UINavigationController.alloc.initWithRootViewController(settings_controller)
+    setting_navi_controller.navigationBar.translucent = false
     self.presentViewController(
       setting_navi_controller,
       animated: true,
