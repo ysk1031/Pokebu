@@ -7,10 +7,13 @@ class PocketWebViewController < UIViewController
     self.title = item.title
 
     @back_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(101, target: self, action: 'go_back')
-    @reload_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(
+    reload_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(
       UIBarButtonSystemItemRefresh, target: self, action: 'reload'
     )
-    @action_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(
+    bookmark_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(
+      UIBarButtonSystemItemAdd, target: self, action: 'bookmark'
+    )
+    action_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(
       UIBarButtonSystemItemAction, target: self, action: 'do_action'
     )
     flexible_space = UIBarButtonItem.alloc.initWithBarButtonSystemItem(
@@ -20,9 +23,11 @@ class PocketWebViewController < UIViewController
     toolbar_items = [
       @back_button,
       flexible_space,
-      @reload_button,
+      reload_button,
       flexible_space,
-      @action_button
+      bookmark_button,
+      flexible_space,
+      action_button
     ]
     self.navigationController.setToolbarHidden(false, animated: false)
     self.navigationController.toolbar.translucent = false
@@ -43,6 +48,12 @@ class PocketWebViewController < UIViewController
 
   def reload
     @web_view.reload
+  end
+
+  def bookmark
+    bookmark_view_controller = HTBHatenaBookmarkViewController.new
+    bookmark_view_controller.URL = NSURL.URLWithString(item.url)
+    self.presentViewController(bookmark_view_controller, animated: true, completion: nil)
   end
 
   def do_action

@@ -7,14 +7,21 @@ class PocketItemViewController < UIViewController
     self.title = 'Item'
 
     # ↓さすがに長過ぎるので、後でviewに分離する
-    @action_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(
+    action_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(
       UIBarButtonSystemItemAction, target: self, action: 'do_action'
+    )
+    bookmark_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(
+      UIBarButtonSystemItemAdd, target: self, action: 'bookmark'
     )
     flexible_space = UIBarButtonItem.alloc.initWithBarButtonSystemItem(
       UIBarButtonSystemItemFlexibleSpace, target: nil, action: nil
     )
+    fixed_space = UIBarButtonItem.alloc.initWithBarButtonSystemItem(
+      UIBarButtonSystemItemFixedSpace, target: nil, action: nil
+    )
+    fixed_space.width = 50
 
-    toolbar_items = [flexible_space, @action_button]
+    toolbar_items = [flexible_space, bookmark_button, fixed_space, action_button]
 
     self.navigationController.setToolbarHidden(false, animated: false)
     self.navigationController.toolbar.translucent = false
@@ -93,6 +100,12 @@ class PocketItemViewController < UIViewController
     pocket_web_view_controller = PocketWebViewController.new
     pocket_web_view_controller.item = item
     self.navigationController.pushViewController(pocket_web_view_controller, animated: true)
+  end
+
+  def bookmark
+    bookmark_view_controller = HTBHatenaBookmarkViewController.new
+    bookmark_view_controller.URL = NSURL.URLWithString(item.url)
+    self.presentViewController(bookmark_view_controller, animated: true, completion: nil)
   end
 
   def do_action
