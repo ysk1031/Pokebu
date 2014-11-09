@@ -5,7 +5,12 @@ class PocketItem
 
   def initialize(data)
     @id = data['item_id']
-    @title = data['resolved_title'].empty? ? data['given_title'] : data['resolved_title']
+    @title =
+      if data['resolved_title'].empty?
+        data['given_title'].empty? ? data['resolved_url'] : data['given_title']
+      else
+        data['resolved_title']
+      end
     @url = data['resolved_url']
     @excerpt = data['excerpt']
     @timestamp = data['time_added'].to_i
