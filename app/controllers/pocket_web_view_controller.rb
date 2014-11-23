@@ -36,7 +36,7 @@ class PocketWebViewController < UIViewController
     @web_view = UIWebView.new.tap do |v|
       v.scalesPageToFit = true
       v.backgroundColor = UIColor.whiteColor
-      v.loadRequest(NSURLRequest.requestWithURL(NSURL.URLWithString(item.url)))
+      v.loadRequest(NSURLRequest.requestWithURL(item.url.url_encode.nsurl))
       v.delegate = self
     end
     self.view = @web_view
@@ -52,13 +52,13 @@ class PocketWebViewController < UIViewController
 
   def bookmark
     bookmark_view_controller = HTBHatenaBookmarkViewController.new
-    bookmark_view_controller.URL = NSURL.URLWithString(item.url)
+    bookmark_view_controller.URL = item.url.url_encode.nsurl
     self.presentViewController(bookmark_view_controller, animated: true, completion: nil)
   end
 
   def do_action
     self.presentViewController(
-      UrlActionController.alloc.initWithActivities([NSURL.URLWithString(item.url)]),
+      UrlActionController.alloc.initWithActivities([item.url.url_encode.nsurl]),
       animated: true,
       completion: nil
     )

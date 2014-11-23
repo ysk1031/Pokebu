@@ -31,7 +31,7 @@ class PocketItem
         "&since=#{since_time}&sort=newest"
       end
 
-    AFMotion::JSON.get(url) do |result|
+    AFMotion::JSON.get(url.url_encode) do |result|
       items = []
       error_message = nil
       begin

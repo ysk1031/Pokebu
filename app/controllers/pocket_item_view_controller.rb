@@ -53,7 +53,7 @@ class PocketItemViewController < UIViewController
     }
     @title_label.linkAttributes = link_attributes
     range = item.title.rangeOfString(item.title)
-    @title_label.addLinkToURL(NSURL.URLWithString(item.url), withRange: range)
+    @title_label.addLinkToURL(item.url.url_encode.nsurl, withRange: range)
     @title_label.delegate = self
     @item_body.addSubview(@title_label)
 
@@ -114,7 +114,7 @@ class PocketItemViewController < UIViewController
     @hatebu_count_label.linkAttributes = link_attributes
     range = "Bookmark: #{item.bookmark_count}".rangeOfString("Bookmark: #{item.bookmark_count}")
     @hatebu_count_label.addLinkToURL(
-      NSURL.URLWithString("http://b.hatena.ne.jp/bookmarklet.touch?mode=comment&iphone_app=1&url=#{item.url}"),
+      "http://b.hatena.ne.jp/bookmarklet.touch?mode=comment&iphone_app=1&url=#{item.url.url_encode}".nsurl,
       withRange: range
     )
     @hatebu_count_label.delegate = self
@@ -143,13 +143,13 @@ class PocketItemViewController < UIViewController
 
   def bookmark
     bookmark_view_controller = HTBHatenaBookmarkViewController.new
-    bookmark_view_controller.URL = NSURL.URLWithString(item.url)
+    bookmark_view_controller.URL = item.url.url_encode.nsurl
     self.presentViewController(bookmark_view_controller, animated: true, completion: nil)
   end
 
   def do_action
     self.presentViewController(
-      UrlActionController.alloc.initWithActivities([NSURL.URLWithString(item.url)]),
+      UrlActionController.alloc.initWithActivities([item.url.url_encode.nsurl]),
       animated: true,
       completion: nil
     )

@@ -106,7 +106,7 @@ class PocketItemsController < UITableViewController
     item = @items[indexPath.row]
 
     if item.bookmark_count.nil?
-      AFMotion::HTTP.get("http://api.b.st-hatena.com/entry.count?url=#{item.url}") do |result|
+      AFMotion::HTTP.get("http://api.b.st-hatena.com/entry.count?url=#{item.url.url_encode}") do |result|
         if result.success?
           hatebu_count = result.body.to_i
           item.bookmark_count = hatebu_count
