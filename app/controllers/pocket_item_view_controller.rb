@@ -129,7 +129,9 @@ class PocketItemViewController < UIViewController
 
   def attributedLabel(label, didSelectLinkWithURL: url)
     if url.absoluteString =~ %r{http://b.hatena.ne.jp/bookmarklet.touch}
-      
+      bookmark_comment_controller = BookmarkCommentController.new
+      bookmark_comment_controller.url = url
+      self.navigationController.pushViewController(bookmark_comment_controller, animated: true)
     else
       pocket_web_view_controller = PocketWebViewController.new
       pocket_web_view_controller.item = item
