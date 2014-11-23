@@ -4,6 +4,8 @@ class BookmarkCommentController < UIViewController
   def viewDidLoad
     super
 
+    self.title = "Comment"
+
     @back_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(101, target: self, action: 'go_back')
     reload_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(
       UIBarButtonSystemItemRefresh, target: self, action: 'reload'
@@ -26,7 +28,7 @@ class BookmarkCommentController < UIViewController
     self.navigationController.setToolbarHidden(false, animated: false)
     self.navigationController.toolbar.translucent = false
     self.setToolbarItems(toolbar_items, animated: false)
-    
+
     @web_view = UIWebView.new.tap do |v|
       v.scalesPageToFit = true
       v.backgroundColor = UIColor.whiteColor

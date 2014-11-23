@@ -37,6 +37,8 @@ class PocketItemViewController < UIViewController
     @title_label = TTTAttributedLabel.new.tap do |l|
       l.frame = [[15, 20], [self.view.bounds.size.width - 30, 960]]
       l.numberOfLines = 0
+      l.font = UIFont.systemFontOfSize(20)
+
       l.textAlignment = NSTextAlignmentLeft
       l.lineBreakMode = NSLineBreakByWordWrapping
       l.verticalAlignment = TTTAttributedLabelVerticalAlignmentCenter

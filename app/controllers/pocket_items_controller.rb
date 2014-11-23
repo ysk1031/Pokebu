@@ -1,5 +1,6 @@
 class PocketItemsController < UITableViewController
-  READ_COUNT = 20
+  READ_COUNT = 30
+  CELL_HEIGHT = 70
   ITEM_CELL_ID = 'Item'
 
   def viewDidLoad
@@ -12,6 +13,7 @@ class PocketItemsController < UITableViewController
 
     @indicator = UIActivityIndicatorView.alloc.initWithActivityIndicatorStyle(UIActivityIndicatorViewStyleGray)
     @indicator.stopAnimating
+    start_indicator
 
     @last_fetch_time = Time.now.to_i
     load_items
@@ -37,23 +39,27 @@ class PocketItemsController < UITableViewController
       else
         alert_failed_request error_message
       end
+      end_indicator
     end
   end
 
   def load_more_items
     @page += 1
     load_items
-    end_indicator
   end
 
   def refresh_items
     self.refreshControl.beginRefreshing
 
-    PocketItem.fetch_items((@page + 1) * READ_COUNT, 0, @last_fetch_time) do |items, error_message|
+    PocketItem.fetch_items(READ_COUNT, 0, @last_fetch_time) do |items, error_message|
       if error_message.nil?
         if !items.empty? && items.first.id != @items.first.id
+          new_items_count = items.count
           @items = items.concat(@items).uniq{|i| i.id }
           self.tableView.reloadData
+
+          # スクロール位置を元の場所に
+          self.tableView.setContentOffset [0, CELL_HEIGHT * new_items_count]
         end
       else
         alert_failed_request error_message
@@ -69,8 +75,7 @@ class PocketItemsController < UITableViewController
       indexPath = self.tableView.indexPathForRowAtPoint(recog.locationInView(self.tableView))
       item = @items[indexPath.row]
 
-      pocket_web_view_controller = PocketWebViewController.new
-      pocket_web_view_controller.item = item
+      pocket_web_view_controller = PocketWebViewController.new.tap{|p| p.item = item }
       self.navigationController.pushViewController(pocket_web_view_controller, animated: true)
     end
   end
@@ -80,17 +85,17 @@ class PocketItemsController < UITableViewController
   end
 
   def tableView(tableView, heightForRowAtIndexPath: indexPath)
-    60
+    CELL_HEIGHT
   end
 
   def tableView(tableView, cellForRowAtIndexPath: indexPath)
-    item = @items[indexPath.row]
     cell = tableView.dequeueReusableCellWithIdentifier(ITEM_CELL_ID) ||
       UITableViewCell.alloc.initWithStyle(UITableViewCellStyleSubtitle, reuseIdentifier: ITEM_CELL_ID)
+    item = @items[indexPath.row]
 
     cell.textLabel.text = item.title
     cell.textLabel.numberOfLines = 2
-    cell.textLabel.font = UIFont.systemFontOfSize(14)
+    cell.textLabel.font = UIFont.systemFontOfSize(16)
 
     item.url =~ %r{\Ahttps?://((\w|-|.)+?)/}
     cell.detailTextLabel.text = $1
