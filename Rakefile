@@ -17,6 +17,12 @@ Motion::Project::App.setup do |app|
   app.version = '1.0'
   app.short_version = '1.0'
   app.deployment_target = '7.0'
+  app.identifier = 'io.github.ysk1031.Pokebu'
+  
+  app.development do
+    app.provisioning_profile = "/Users/Yusuke/ios-dev/PokebuDev.mobileprovision"
+    app.codesign_certificate = "iPhone Developer: YUSUKE AONO (E9UARVFJU9)"
+  end
 
   app.my_env.file = './config/environment.yml'
 
