@@ -99,6 +99,21 @@ class PocketItemsController < UITableViewController
 
   def tableView(tableView, didSelectRowAtIndexPath: indexPath)
     item = @items[indexPath.row]
+
+    if item.bookmark_count.nil?
+      AFMotion::HTTP.get("http://api.b.st-hatena.com/entry.count?url=#{item.url}") do |result|
+        if result.success?
+          hatebu_count = result.body.to_i
+          item.bookmark_count = hatebu_count
+        end
+        push_pocket_item_view(item, indexPath)
+      end
+    else
+      push_pocket_item_view(item, indexPath)
+    end
+  end
+
+  def push_pocket_item_view(item, indexPath)
     pocket_item_view_controller = PocketItemViewController.new.tap{|p| p.item = item }
     self.navigationController.pushViewController(pocket_item_view_controller, animated: true)
     self.tableView.deselectRowAtIndexPath(indexPath, animated: true)

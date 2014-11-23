@@ -20,12 +20,12 @@ class PocketItemViewController < UIViewController
       UIBarButtonSystemItemFixedSpace, target: nil, action: nil
     )
     fixed_space.width = 50
-
     toolbar_items = [flexible_space, bookmark_button, fixed_space, action_button]
 
     self.navigationController.setToolbarHidden(false, animated: false)
     self.navigationController.toolbar.translucent = false
     self.setToolbarItems(toolbar_items, animated: false)
+
 
     @item_view = UIView.alloc.initWithFrame(self.view.bounds)
     @item_view.backgroundColor = UIColor.whiteColor
@@ -45,6 +45,11 @@ class PocketItemViewController < UIViewController
       )
       l.sizeToFit
     end
+    link_attributes = {
+      KCTUnderlineStyleAttributeName => NSNumber.numberWithInt(KCTUnderlineStyleNone),
+      KCTForegroundColorAttributeName => UIColor.blueColor
+    }
+    @title_label.linkAttributes = link_attributes
     range = item.title.rangeOfString(item.title)
     @title_label.addLinkToURL(NSURL.URLWithString(item.url), withRange: range)
     @title_label.delegate = self
@@ -87,19 +92,49 @@ class PocketItemViewController < UIViewController
     end
     @item_body.addSubview(@date_label)
 
-    @border = UIView.new.tap do |v|
-      v.frame = [[5, @date_label.bottom + 10], [self.view.bounds.size.width - 10, 0.5]]
+    @first_border = UIView.new.tap do |v|
+      v.frame = [[10, @date_label.bottom + 10], [self.view.bounds.size.width - 20, 0.5]]
       v.backgroundColor = UIColor.grayColor
     end
-    @item_body.addSubview(@border)
+    @item_body.addSubview(@first_border)
+
+    @hatebu_count_label = TTTAttributedLabel.new.tap do |l|
+      l.frame = [[15, @first_border.bottom + 10], [self.view.bounds.size.width - 30, 960]]
+      l.numberOfLines = 1
+      l.textAlignment = NSTextAlignmentLeft
+      l.lineBreakMode = NSLineBreakByWordWrapping
+      l.verticalAlignment = TTTAttributedLabelVerticalAlignmentCenter
+      l.setText("Bookmark: #{item.bookmark_count}", afterInheritingLabelAttributesAndConfiguringWithBlock:
+        lambda{|str| return str }
+      )
+      l.sizeToFit
+    end
+    @hatebu_count_label.linkAttributes = link_attributes
+    range = "Bookmark: #{item.bookmark_count}".rangeOfString("Bookmark: #{item.bookmark_count}")
+    @hatebu_count_label.addLinkToURL(
+      NSURL.URLWithString("http://b.hatena.ne.jp/bookmarklet.touch?mode=comment&iphone_app=1&url=#{item.url}"),
+      withRange: range
+    )
+    @hatebu_count_label.delegate = self
+    @item_body.addSubview(@hatebu_count_label)
+
+    @second_border = UIView.new.tap do |v|
+      v.frame = [[10, @hatebu_count_label.bottom + 10], [self.view.bounds.size.width - 20, 0.5]]
+      v.backgroundColor = UIColor.grayColor
+    end
+    @item_body.addSubview(@second_border)
 
     self.view.addSubview(@item_view)
   end
 
   def attributedLabel(label, didSelectLinkWithURL: url)
-    pocket_web_view_controller = PocketWebViewController.new
-    pocket_web_view_controller.item = item
-    self.navigationController.pushViewController(pocket_web_view_controller, animated: true)
+    if url.absoluteString =~ %r{http://b.hatena.ne.jp/bookmarklet.touch}
+      
+    else
+      pocket_web_view_controller = PocketWebViewController.new
+      pocket_web_view_controller.item = item
+      self.navigationController.pushViewController(pocket_web_view_controller, animated: true)
+    end
   end
 
   def bookmark

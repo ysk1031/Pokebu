@@ -1,5 +1,5 @@
 class PocketItem
-  attr_accessor :id, :title, :url, :excerpt, :timestamp
+  attr_accessor :id, :title, :url, :excerpt, :timestamp, :bookmark_count
 
   BASE_URL = 'https://getpocket.com/v3/get'
 
