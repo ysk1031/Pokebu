@@ -22,6 +22,9 @@ Motion::Project::App.setup do |app|
   app.development do
     app.provisioning_profile = "/Users/Yusuke/ios-dev/PokebuDev.mobileprovision"
     app.codesign_certificate = "iPhone Developer: YUSUKE AONO (E9UARVFJU9)"
+    app.entitlements['keychain-access-groups'] = [
+      app.seed_id + '.' + app.identifier
+    ]
   end
 
   app.my_env.file = './config/environment.yml'
