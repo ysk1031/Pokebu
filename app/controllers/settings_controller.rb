@@ -33,12 +33,30 @@ class SettingsController < UITableViewController
   def tableView(tableView, didSelectRowAtIndexPath: indexPath)
     setting = @settings[indexPath.row]
     case setting.action
+    when 'pocket'
+      pocket_auth
     when 'hatebu'
       hatebu_auth
     else
 
     end
     self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+  end
+
+  def pocket_auth
+    if PocketAPI.sharedAPI.loggedIn?
+      pocket_config_controller = PocketConfigController.new
+      self.navigationController.pushViewController(pocket_config_controller, animated: true)
+    else
+      PocketAPI.sharedAPI.loginWithHandler(
+        lambda do |api, error|
+          if error.nil?
+          else
+            alert_pocket_login_failure error.localizedDescription
+          end
+        end
+      )
+    end
   end
 
   def hatebu_auth

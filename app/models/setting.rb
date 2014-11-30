@@ -2,6 +2,7 @@ class Setting
   attr_accessor :title, :action
 
   SETTING_INFOS = [
+    %w(Pocketアカウント pocket),
     %w(はてなブックマークアカウント hatebu),
     %w(このアプリについて fuga)
   ]

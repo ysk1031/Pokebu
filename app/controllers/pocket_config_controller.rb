@@ -1,14 +1,14 @@
-class HatebuConfigController < ConfigController
+class PocketConfigController < ConfigController
   def viewDidLoad
     super
     self.title = '設定'
     @setting_element = [
       {
-        title: 'はてなブックマーク',
+        title: 'Pocket',
         cell: [
           {
             label: '連携を解除',
-            detailLabel: HTBHatenaBookmarkManager.sharedManager.username
+            detailLabel: PocketAPI.sharedAPI.username
           }
         ]
       }
@@ -18,7 +18,7 @@ class HatebuConfigController < ConfigController
   def tableView(tableView, didSelectRowAtIndexPath: indexPath)
     alert_controller = UIAlertController.alertControllerWithTitle(
       '確認',
-      message: 'はてなブックマークの連携を解除してもよろしいですか？',
+      message: 'Pocketからログアウトしてもよろしいですか？',
       preferredStyle: UIAlertControllerStyleAlert
     )
     cancel = UIAlertAction.actionWithTitle(
@@ -30,7 +30,7 @@ class HatebuConfigController < ConfigController
       'OK',
       style: UIAlertActionStyleDefault,
       handler: lambda do |action|
-        HTBHatenaBookmarkManager.sharedManager.logout
+        PocketAPI.sharedAPI.logout
         self.navigationController.popViewControllerAnimated(true)
       end
     )
