@@ -8,7 +8,7 @@ class AppDelegate
     navigation_controller.navigationBar.translucent = false
     @window.rootViewController = navigation_controller
 
-    if PocketAPI.sharedAPI.loggedIn?
+    unless PocketAPI.sharedAPI.loggedIn?
       PocketAPI.sharedAPI.loginWithHandler(
         lambda do |api, error|
           if error.nil?
