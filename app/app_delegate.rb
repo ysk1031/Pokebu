@@ -2,15 +2,12 @@ class AppDelegate
   def application(application, didFinishLaunchingWithOptions:launchOptions)
     initialize_pocket_sdk
 
-    @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
-    @pocket_items_controller = PocketItemsController.new
-    navigation_controller = UINavigationController.alloc.initWithRootViewController(@pocket_items_controller)
-    navigation_controller.navigationBar.translucent = false
-    @window.rootViewController = navigation_controller
-
-    unless PocketAPI.sharedAPI.loggedIn?
+    if PocketAPI.sharedAPI.loggedIn?
+      initialize_window
+    else
       PocketAPI.sharedAPI.loginWithHandler(
         lambda do |api, error|
+          initialize_window
           if error.nil?
           else
             alert_pocket_login_failure error.localizedDescription
@@ -19,8 +16,16 @@ class AppDelegate
       )
     end
 
+    true
+  end
+
+  def initialize_window
+    @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
+    @pocket_items_controller = PocketItemsController.new
+    navigation_controller = UINavigationController.alloc.initWithRootViewController(@pocket_items_controller)
+    navigation_controller.navigationBar.translucent = false
+    @window.rootViewController = navigation_controller
     @window.makeKeyAndVisible
-    return true
   end
 
   def initialize_hatebu_sdk
