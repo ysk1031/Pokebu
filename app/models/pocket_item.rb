@@ -24,11 +24,11 @@ class PocketItem
   def self.fetch_items(fetch_count, offset, since_time = nil, &block)
     url =
       if since_time.nil?
-        "#{BASE_URL}?consumer_key=#{MY_ENV['pocket']['consumer_key']}&access_token=#{MY_ENV['pocket']['access_token']}" \
-        "&count=#{fetch_count}&offset=#{offset}&sort=newest"
+        "#{BASE_URL}?consumer_key=#{MY_ENV['pocket']['consumer_key']}&access_token=#{PocketAPI.sharedAPI.pkt_getToken}" \
+        "&count=#{fetch_count}&offset=#{offset}"
       else
-        "#{BASE_URL}?consumer_key=#{MY_ENV['pocket']['consumer_key']}&access_token=#{MY_ENV['pocket']['access_token']}" \
-        "&since=#{since_time}&sort=newest"
+        "#{BASE_URL}?consumer_key=#{MY_ENV['pocket']['consumer_key']}&access_token=#{PocketAPI.sharedAPI.pkt_getToken}" \
+        "&since=#{since_time}"
       end
 
     AFMotion::JSON.get(url.url_encode) do |result|
