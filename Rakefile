@@ -18,7 +18,7 @@ Motion::Project::App.setup do |app|
   app.short_version = '1.0'
   app.deployment_target = '7.0'
   app.identifier = 'io.github.ysk1031.Pokebu'
-  
+
   app.development do
     app.provisioning_profile = "/Users/Yusuke/ios-dev/PokebuDev.mobileprovision"
     app.codesign_certificate = "iPhone Developer: YUSUKE AONO (E9UARVFJU9)"
@@ -26,11 +26,19 @@ Motion::Project::App.setup do |app|
 
   app.my_env.file = './config/environment.yml'
 
+  app.info_plist['CFBundleURLTypes'] = [
+    { 'CFBundleURLName' => 'com.readitlater',
+      'CFBundleURLSchemes' => ['pocketapp32674']
+    }
+  ]
+
   app.pods do
     pod 'AFNetworking'
     pod 'TTTAttributedLabel'
     pod 'NSDate+TimeAgo'
     pod 'HatenaBookmarkSDK', git: 'git@github.com:hatena/Hatena-Bookmark-iOS-SDK.git',
       branch: 'prefixed-afnetworking'
+    pod 'PocketAPI', git: 'git@github.com:ysk1031/Pocket-ObjC-SDK.git',
+      branch: 'cocoapods-dependency'
   end
 end

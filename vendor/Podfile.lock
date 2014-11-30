@@ -23,6 +23,8 @@ PODS:
   - HatenaBookmarkSDK (1.1.1):
     - SFHFKeychainUtils
   - NSDate+TimeAgo (1.0.3)
+  - PocketAPI (1.0.2):
+    - SFHFKeychainUtils (= 0.0.1)
   - SFHFKeychainUtils (0.0.1)
   - TTTAttributedLabel (1.11.0)
 
@@ -31,22 +33,30 @@ DEPENDENCIES:
   - AFNetworking (~> 2.4.1)
   - HatenaBookmarkSDK (from `git@github.com:hatena/Hatena-Bookmark-iOS-SDK.git`, branch `prefixed-afnetworking`)
   - NSDate+TimeAgo
+  - PocketAPI (from `git@github.com:ysk1031/Pocket-ObjC-SDK.git`, branch `cocoapods-dependency`)
   - TTTAttributedLabel
 
 EXTERNAL SOURCES:
   HatenaBookmarkSDK:
     :branch: prefixed-afnetworking
     :git: git@github.com:hatena/Hatena-Bookmark-iOS-SDK.git
+  PocketAPI:
+    :branch: cocoapods-dependency
+    :git: git@github.com:ysk1031/Pocket-ObjC-SDK.git
 
 CHECKOUT OPTIONS:
   HatenaBookmarkSDK:
     :commit: 6731ce58220b402eff6245e8dd7ac4464708becb
     :git: git@github.com:hatena/Hatena-Bookmark-iOS-SDK.git
+  PocketAPI:
+    :commit: 08210648b8be1951cb6bdc2fa0fac1564ef4df56
+    :git: git@github.com:ysk1031/Pocket-ObjC-SDK.git
 
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
   HatenaBookmarkSDK: ccc8f79a9101f6b3846adfa07ae5330da52a44e0
   NSDate+TimeAgo: f3533e0198fab05b716368b19f8c2185d53d6f3b
+  PocketAPI: d4b8f31c5a29e20da84b6a19055344bb1ad06099
   SFHFKeychainUtils: 6fdda05a86d035db406c7662ec1054814b68f0fd
   TTTAttributedLabel: e63baa4d3b8798ea259f5d9f55720002b4bbbd66
 
