@@ -1,7 +1,6 @@
 class PocketItemsController < UITableViewController
   READ_COUNT = 30
   CELL_HEIGHT = 70
-  ITEM_CELL_ID = 'Item'
 
   def viewDidLoad
     super
@@ -89,17 +88,8 @@ class PocketItemsController < UITableViewController
   end
 
   def tableView(tableView, cellForRowAtIndexPath: indexPath)
-    cell = tableView.dequeueReusableCellWithIdentifier(ITEM_CELL_ID) ||
-      UITableViewCell.alloc.initWithStyle(UITableViewCellStyleSubtitle, reuseIdentifier: ITEM_CELL_ID)
     item = @items[indexPath.row]
-
-    cell.textLabel.text = item.title
-    cell.textLabel.numberOfLines = 2
-    cell.textLabel.font = UIFont.systemFontOfSize(16)
-
-    item.url =~ %r{\Ahttps?://((\w|-|.)+?)/}
-    cell.detailTextLabel.text = $1
-    cell
+    PocketItemCell.setItemContent(item, inTableView: tableView)
   end
 
   def tableView(tableView, didSelectRowAtIndexPath: indexPath)
