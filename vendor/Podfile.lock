@@ -1,23 +1,23 @@
 PODS:
-  - AFNetworking (2.4.1):
-    - AFNetworking/NSURLConnection (= 2.4.1)
-    - AFNetworking/NSURLSession (= 2.4.1)
-    - AFNetworking/Reachability (= 2.4.1)
-    - AFNetworking/Security (= 2.4.1)
-    - AFNetworking/Serialization (= 2.4.1)
-    - AFNetworking/UIKit (= 2.4.1)
-  - AFNetworking/NSURLConnection (2.4.1):
+  - AFNetworking (2.5.0):
+    - AFNetworking/NSURLConnection (= 2.5.0)
+    - AFNetworking/NSURLSession (= 2.5.0)
+    - AFNetworking/Reachability (= 2.5.0)
+    - AFNetworking/Security (= 2.5.0)
+    - AFNetworking/Serialization (= 2.5.0)
+    - AFNetworking/UIKit (= 2.5.0)
+  - AFNetworking/NSURLConnection (2.5.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.4.1):
+  - AFNetworking/NSURLSession (2.5.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.4.1)
-  - AFNetworking/Security (2.4.1)
-  - AFNetworking/Serialization (2.4.1)
-  - AFNetworking/UIKit (2.4.1):
+  - AFNetworking/Reachability (2.5.0)
+  - AFNetworking/Security (2.5.0)
+  - AFNetworking/Serialization (2.5.0)
+  - AFNetworking/UIKit (2.5.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - HatenaBookmarkSDK (1.1.1):
@@ -30,7 +30,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
-  - AFNetworking (~> 2.4.1)
+  - AFNetworking (~> 2.5)
   - HatenaBookmarkSDK (from `git@github.com:hatena/Hatena-Bookmark-iOS-SDK.git`, branch `prefixed-afnetworking`)
   - NSDate+TimeAgo
   - PocketAPI (from `git@github.com:ysk1031/Pocket-ObjC-SDK.git`, branch `cocoapods-dependency`)
@@ -53,7 +53,7 @@ CHECKOUT OPTIONS:
     :git: git@github.com:ysk1031/Pocket-ObjC-SDK.git
 
 SPEC CHECKSUMS:
-  AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
+  AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
   HatenaBookmarkSDK: ccc8f79a9101f6b3846adfa07ae5330da52a44e0
   NSDate+TimeAgo: f3533e0198fab05b716368b19f8c2185d53d6f3b
   PocketAPI: d4b8f31c5a29e20da84b6a19055344bb1ad06099
