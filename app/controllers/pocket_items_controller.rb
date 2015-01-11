@@ -1,11 +1,12 @@
 class PocketItemsController < UITableViewController
   READ_COUNT = 30
-  CELL_HEIGHT = 70
+  CELL_HEIGHT = 75
 
   def viewDidLoad
     super
 
     self.title = 'Pokebu'
+
     @items = []
     @page = 0
     @last_items_size = 0
