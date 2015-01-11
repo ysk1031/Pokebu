@@ -7,7 +7,7 @@ class PocketItemCell < UITableViewCell
 
   def self.setItemContent(item, inTableView: tableView)
     cell = tableView.dequeueReusableCellWithIdentifier(ITEM_CELL_ID) ||
-      PocketItemCell.alloc.initWithStyle(UITableViewCellStyleSubtitle, reuseIdentifier: ITEM_CELL_ID)
+      self.alloc.initWithStyle(UITableViewCellStyleSubtitle, reuseIdentifier: ITEM_CELL_ID)
     cell.updateViewForItem item
 
     cell

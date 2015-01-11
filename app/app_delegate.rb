@@ -31,7 +31,7 @@ class AppDelegate
 
   def initialize_navigation_bar
     UINavigationBar.appearance.barTintColor = UIColor.colorWithRed(
-      0.314, green: 0.733, blue: 0.710, alpha: 1.0
+      0.306, green: 0.722, blue: 0.698, alpha: 1.0  # 4EB8B2
     )
     UINavigationBar.appearance.barStyle = UIBarStyleBlack
     UINavigationBar.appearance.tintColor = UIColor.whiteColor
