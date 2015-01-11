@@ -5,13 +5,13 @@ class PocketItemViewController < UIViewController
     super
 
     self.title = '保存アイテム'
-    set_toolbar
+    setToolbar
 
     itemView = PocketItemView.setContent(self, item)
     self.view.addSubview itemView
   end
 
-  def set_toolbar
+  def setToolbar
     action_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(
       UIBarButtonSystemItemAction, target: self, action: 'do_action'
     )
