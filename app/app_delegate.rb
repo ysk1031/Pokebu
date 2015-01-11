@@ -15,6 +15,7 @@ class AppDelegate
         end
       )
     end
+    initialize_navigation_bar
 
     true
   end
@@ -26,6 +27,14 @@ class AppDelegate
     navigation_controller.navigationBar.translucent = false
     @window.rootViewController = navigation_controller
     @window.makeKeyAndVisible
+  end
+
+  def initialize_navigation_bar
+    UINavigationBar.appearance.barTintColor = UIColor.colorWithRed(
+      0.314, green: 0.733, blue: 0.710, alpha: 1.0
+    )
+    UINavigationBar.appearance.barStyle = UIBarStyleBlack
+    UINavigationBar.appearance.tintColor = UIColor.whiteColor
   end
 
   def initialize_hatebu_sdk
