@@ -60,7 +60,7 @@ class PocketItemView < UIScrollView
       if imageView.nil?
         fullWidth - titleLabelOriginX - 10
       else
-        fullWidth - titleLabelOriginX - SQUARE_IMAGE_SIDE - 10
+        fullWidth - titleLabelOriginX - SQUARE_IMAGE_SIDE - 15
       end
     excerptLabel = UILabel.new.tap do |l|
       l.frame = [[titleLabelOriginX, titleLabel.bottom + 10], [excerptLabelWidth, 960]]
@@ -73,8 +73,14 @@ class PocketItemView < UIScrollView
     body.addSubview excerptLabel
 
     # URL
+    urlLabelOriginY =
+      if imageView.nil?
+        excerptLabel.bottom + 10
+      else
+        excerptLabel.bottom > imageView.bottom ? excerptLabel.bottom + 10 : imageView.bottom + 10
+      end
     urlLabel = UILabel.new.tap do |l|
-      l.frame = [[titleLabelOriginX, excerptLabel.bottom + 10], [fullWidth - titleLabelOriginX - 10, 960]]
+      l.frame = [[titleLabelOriginX, urlLabelOriginY], [fullWidth - titleLabelOriginX - 10, 960]]
       l.lineBreakMode = NSLineBreakByCharWrapping
       l.text = item.url
       l.textColor = UIColor.grayColor
