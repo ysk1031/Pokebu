@@ -4,17 +4,17 @@ class BookmarkCommentController < UIViewController
   def viewDidLoad
     super
 
-    self.title = "Comment"
+    self.title = "ブックマーク"
 
     @back_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(101, target: self, action: 'go_back')
     reload_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(
       UIBarButtonSystemItemRefresh, target: self, action: 'reload'
     )
     flexible_space = UIBarButtonItem.alloc.initWithBarButtonSystemItem(
-    UIBarButtonSystemItemFlexibleSpace, target: nil, action: nil
+      UIBarButtonSystemItemFlexibleSpace, target: nil, action: nil
     )
     fixed_space = UIBarButtonItem.alloc.initWithBarButtonSystemItem(
-    UIBarButtonSystemItemFixedSpace, target: nil, action: nil
+      UIBarButtonSystemItemFixedSpace, target: nil, action: nil
     )
     fixed_space.width = 50
 

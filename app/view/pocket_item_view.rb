@@ -1,14 +1,21 @@
 class PocketItemView < UIScrollView
+  attr_accessor :title_label, :bookmark_button
+
   GOOGLE_FAVICON_URL = "http://www.google.com/s2/favicons"
   SQUARE_IMAGE_SIDE = 80
 
   @@placeholder_favicon = UIImage.imageNamed('no_favicon')
 
   def self.setContent(controller, item)
-    fullWidth = controller.view.bounds.size.width
+    self.alloc.initWithFrame(controller, item)
+  end
 
-    body = self.alloc.initWithFrame(controller.view.bounds)
-    body.backgroundColor = UIColor.whiteColor
+
+  def initWithFrame(controller, item)
+    super(controller.view.bounds)
+    self.backgroundColor = UIColor.whiteColor
+
+    fullWidth = controller.view.bounds.size.width
 
     # favicon
     item.url =~ %r{\Ahttps?://((\w|-|.)+?)/}
@@ -21,7 +28,7 @@ class PocketItemView < UIScrollView
         placeholderImage: @@placeholder_favicon
       )
     end
-    body.addSubview faviconView
+    self.addSubview faviconView
 
     # title
     titleLabelOriginX = faviconView.right + 8
@@ -43,7 +50,8 @@ class PocketItemView < UIScrollView
       )
       l.delegate = controller
     end
-    body.addSubview titleLabel
+    self.addSubview titleLabel
+    self.title_label = titleLabel
 
     # image
     unless item.asset_src.nil?
@@ -52,7 +60,7 @@ class PocketItemView < UIScrollView
         v.setImageWithURL(item.asset_src.url_encode.nsurl)
         v.frame = [[fullWidth - SQUARE_IMAGE_SIDE - 10, titleLabel.bottom + 10], [SQUARE_IMAGE_SIDE, SQUARE_IMAGE_SIDE]]
       end
-      body.addSubview imageView
+      self.addSubview imageView
     end
 
     # excerpt
@@ -70,7 +78,7 @@ class PocketItemView < UIScrollView
       l.numberOfLines = 6
       l.sizeToFit
     end
-    body.addSubview excerptLabel
+    self.addSubview excerptLabel
 
     # URL
     urlLabelOriginY =
@@ -88,7 +96,7 @@ class PocketItemView < UIScrollView
       l.numberOfLines = 0
       l.sizeToFit
     end
-    body.addSubview urlLabel
+    self.addSubview urlLabel
 
     # アイテムの追加日
     dateLabel = UILabel.new.tap do |l|
@@ -100,90 +108,79 @@ class PocketItemView < UIScrollView
       l.numberOfLines = 1
       l.sizeToFit
     end
-    body.addSubview dateLabel
+    self.addSubview dateLabel
 
-    # 区切り線
+    # 区切り線1
     firstBorder = borderLine(dateLabel.bottom + 10, fullWidth)
-    body.addSubview firstBorder
+    self.addSubview firstBorder
 
     # はてブ数
     bookmark_text = bookmarkDisplayText item
-    @hatebuCountLabel = TTTAttributedLabel.new.tap do |l|
-      l.frame = [[15, firstBorder.bottom + 10], [fullWidth - 30, 960]]
-      l.numberOfLines = 1
-      l.font = UIFont.systemFontOfSize(16)
-      l.lineBreakMode = NSLineBreakByWordWrapping
-      l.verticalAlignment = TTTAttributedLabelVerticalAlignmentCenter
-      l.setText(bookmark_text, afterInheritingLabelAttributesAndConfiguringWithBlock:
-        lambda{|str| return str }
-      )
-      l.sizeToFit
-      l.linkAttributes = linkAttributes
-      l.activeLinkAttributes = activeLinkAttributes
-      l.addLinkToURL(
-        "http://b.hatena.ne.jp/bookmarklet.touch?mode=comment&iphone_app=1&url=#{item.url.url_encode}".nsurl,
-        withRange: bookmark_text.rangeOfString(bookmark_text)
-      )
-      l.delegate = controller
+    bookmarkCountButton = UIButton.buttonWithType(UIButtonTypeSystem).tap do |b|
+      b.frame = [[10, firstBorder.bottom], [fullWidth - 20, 40]]
+      b.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft
+      b.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0)
+      b.titleLabel.font = UIFont.systemFontOfSize(16)
+      b.titleLabel.lineBreakMode = NSLineBreakByWordWrapping
+      b.setTitle(bookmark_text, forState: UIControlStateNormal)
+      b.setTitleColor(UIColor.themeColorGreen, forState: UIControlStateNormal)
+      b.setTitleColor(UIColor.themeColorRed, forState: UIControlStateHighlighted)
     end
-    body.addSubview @hatebuCountLabel
-    loadBookmarkCount(item)
+    self.addSubview bookmarkCountButton
+    self.bookmark_button = bookmarkCountButton
+    loadBookmarkCount item
 
-    # 区切り線
-    secondBorder = borderLine(@hatebuCountLabel.bottom + 10, fullWidth)
-    body.addSubview secondBorder
+    # 区切り線2
+    secondBorder = borderLine(bookmarkCountButton.bottom, fullWidth)
+    self.addSubview secondBorder
 
-    body.setContentSize [fullWidth, secondBorder.bottom + 100]
+    self.setContentSize [fullWidth, secondBorder.bottom + 100]
+
+    self
   end
 
-  def self.bookmarkDisplayText(item)
-    "ブックマーク数：#{item.bookmark_count}"
+  def bookmarkDisplayText(item)
+    "#{item.bookmark_count || 0} ブックマーク"
   end
 
-  def self.linkAttributes
+  def linkAttributes
     {
       KCTUnderlineStyleAttributeName => NSNumber.numberWithInt(KCTUnderlineStyleNone),
-      KCTForegroundColorAttributeName => UIColor.colorWithRed(
-        0.314, green: 0.737, blue: 0.714, alpha: 1.0  # 50BCB6
-      )
+      KCTForegroundColorAttributeName => UIColor.themeColorGreen
     }
   end
 
-  def self.activeLinkAttributes
+  def activeLinkAttributes
     {
       KCTUnderlineStyleAttributeName => NSNumber.numberWithInt(KCTUnderlineStyleNone),
-      KCTForegroundColorAttributeName => UIColor.colorWithRed(
-        0.929, green: 0.251, blue: 0.333, alpha: 1.0  # ED4055
-      )
+      KCTForegroundColorAttributeName => UIColor.themeColorRed
     }
   end
 
-  def self.borderLine(originY, width)
+  def borderLine(originY, width)
     UIView.new.tap do |v|
       v.frame = [[10, originY], [width - 20, 0.5]]
       v.backgroundColor = UIColor.grayColor
     end
   end
 
-  def self.loadBookmarkCount(item)
-    if item.bookmark_count.nil?
+  def loadBookmarkCount(item)
+    # if item.bookmark_count.nil?
       Dispatch::Queue.concurrent.async do
         item.getBookmarkCount do |bookmark_count, error|
           Dispatch::Queue.main.async do
             if error.nil?
               bookmark_text = bookmarkDisplayText(item)
-              @hatebuCountLabel.setText(bookmark_text, afterInheritingLabelAttributesAndConfiguringWithBlock:
-                lambda{|str| return str }
-              )
-              @hatebuCountLabel.addLinkToURL(
-                "http://b.hatena.ne.jp/bookmarklet.touch?mode=comment&iphone_app=1&url=#{item.url.url_encode}".nsurl,
-                withRange: bookmark_text.rangeOfString(bookmark_text)
-              )
-              @hatebuCountLabel.sizeToFit
+              # UIButtonのタイトル変更時のアニメーションのせいで文字がちらつくので、
+              # この時のみアニメーションをオフにする
+              UIView.setAnimationsEnabled false
+              self.bookmark_button.setTitle(bookmark_text, forState: UIControlStateNormal)
+              self.bookmark_button.layoutIfNeeded
+              UIView.setAnimationsEnabled true
             end
           end
         end
       end
-    end
+    # end
   end
 end
