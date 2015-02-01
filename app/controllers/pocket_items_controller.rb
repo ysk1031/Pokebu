@@ -125,18 +125,29 @@ class PocketItemsController < UITableViewController
     self.navigationController.setToolbarHidden(true, animated: true)
   end
 
+  def viewDidAppear(animated)
+    item_archive_flgs = @items.map(&:archive_flg)
+
+    # アーカイブ操作後のみ、セルを削除
+    if item_archive_flgs.include?(true)
+      self.tableView.beginUpdates
+      index = item_archive_flgs.index(true)
+
+      # データソースを削除
+      @items.delete_at index
+
+      # セルを削除
+      deletedPath = NSIndexPath.indexPathForRow(index, inSection: 0)
+      self.tableView.deleteRowsAtIndexPaths(
+        [deletedPath],
+        withRowAnimation: UITableViewRowAnimationMiddle
+      )
+      self.tableView.endUpdates
+    end
+  end
+
   def alert_failed_request(error_message)
-    alert_controller = UIAlertController.alertControllerWithTitle(
-      'エラー',
-      message: error_message,
-      preferredStyle: UIAlertControllerStyleAlert
-    )
-    alert_action = UIAlertAction.actionWithTitle(
-      'OK',
-      style: UIAlertActionStyleDefault,
-      handler: nil
-    )
-    alert_controller.addAction(alert_action)
+    alert_controller = UIAlertController.setErrorMessage error_message
     self.presentViewController(alert_controller, animated: true, completion: nil)
   end
 

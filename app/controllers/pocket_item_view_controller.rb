@@ -18,7 +18,7 @@ class PocketItemViewController < UIViewController
       UIBarButtonSystemItemAdd, target: self, action: 'bookmark'
     )
     archive_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(
-      UIBarButtonSystemItemOrganize, target: self, action: 'archive'
+      UIBarButtonSystemItemOrganize, target: self, action: 'alertArchive'
     )
     action_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(
       UIBarButtonSystemItemAction, target: self, action: 'do_action'
@@ -49,8 +49,39 @@ class PocketItemViewController < UIViewController
     self.presentViewController(bookmark_view_controller, animated: true, completion: nil)
   end
 
-  def archive
-    # Archive Item
+  def alertArchive
+    alert_controller = UIAlertController.alertControllerWithTitle(
+      '確認',
+      message: 'この記事をアーカイブしてもよろしいですか？',
+      preferredStyle: UIAlertControllerStyleAlert
+    )
+    cancel = UIAlertAction.actionWithTitle(
+      'キャンセル',
+      style: UIAlertActionStyleDefault,
+      handler: nil
+    )
+    ok = UIAlertAction.actionWithTitle(
+      'OK',
+      style: UIAlertActionStyleDefault,
+      handler: lambda do |action|
+        runArchive
+      end
+    )
+    alert_controller.addAction(cancel)
+    alert_controller.addAction(ok)
+    self.presentViewController(alert_controller, animated: true, completion: nil)
+  end
+
+  def runArchive
+    item.archive do |result, error|
+      if result
+        item.archive_flg = true
+        self.navigationController.popViewControllerAnimated(true)
+      else
+        alert_controller = UIAlertController.setErrorMessage error
+        self.presentViewController(alert_controller, animated: true, completion: nil)
+      end
+    end
   end
 
   def do_action
