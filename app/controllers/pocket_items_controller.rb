@@ -5,7 +5,7 @@ class PocketItemsController < UITableViewController
   def viewDidLoad
     super
 
-    self.title = 'Pokebu'
+    self.title = 'My Pocket'
 
     @items = []
     @page = 0

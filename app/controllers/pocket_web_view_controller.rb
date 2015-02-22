@@ -5,8 +5,26 @@ class PocketWebViewController < UIViewController
     super
 
     self.title = item.title
+    self.view.backgroundColor = UIColor.whiteColor
+    setToolbar
 
+    @webView = UIWebView.new.tap do |v|
+      v.frame           = self.view.bounds
+      v.scalesPageToFit = true
+      v.backgroundColor = UIColor.whiteColor
+      v.delegate        = self
+      v.loadRequest(NSURLRequest.requestWithURL(item.url.url_encode.nsurl))
+    end
+    self.view.addSubview @webView
+
+    setIndicator
+    @indicator.startAnimating
+    self.view.addSubview @indicator
+  end
+
+  def setToolbar
     @back_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(101, target: self, action: 'go_back')
+    @back_button.enabled = false
     reload_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(
       UIBarButtonSystemItemRefresh, target: self, action: 'reload'
     )
@@ -32,22 +50,21 @@ class PocketWebViewController < UIViewController
     self.navigationController.setToolbarHidden(false, animated: false)
     self.navigationController.toolbar.translucent = false
     self.setToolbarItems(toolbar_items, animated: false)
+  end
 
-    @web_view = UIWebView.new.tap do |v|
-      v.scalesPageToFit = true
-      v.backgroundColor = UIColor.whiteColor
-      v.loadRequest(NSURLRequest.requestWithURL(item.url.url_encode.nsurl))
-      v.delegate = self
+  def setIndicator
+    @indicator = UIActivityIndicatorView.alloc.initWithActivityIndicatorStyle(UIActivityIndicatorViewStyleGray).tap do |i|
+      i.center           = [self.view.center.x, self.view.center.y - 100]
+      i.hidesWhenStopped = true
     end
-    self.view = @web_view
   end
 
   def go_back
-    @web_view.goBack
+    @webView.goBack
   end
 
   def reload
-    @web_view.reload
+    @webView.reload
   end
 
   def bookmark
@@ -64,7 +81,8 @@ class PocketWebViewController < UIViewController
     )
   end
 
-  def webViewDidFinishLoad(web_view)
-    @back_button.enabled = web_view.canGoBack
+  def webViewDidFinishLoad(webView)
+    @back_button.enabled = webView.canGoBack
+    @indicator.stopAnimating
   end
 end
