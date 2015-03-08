@@ -93,8 +93,13 @@ class PocketItemViewController < UIViewController
   end
 
   def load_bookmarks
-    comment_url = "http://b.hatena.ne.jp/bookmarklet.touch?mode=comment&iphone_app=1&url=#{item.url.url_encode}".nsurl
-    bookmark_comment_controller = BookmarkCommentController.new.tap{|c| c.url = comment_url }
-    self.navigationController.pushViewController(bookmark_comment_controller, animated: true)
+    bookmark_comment_controller = BookmarkCommentController.new.tap{|c| c.item = item }
+    bookmark_comment_navi_controller = UINavigationController.alloc.initWithRootViewController(bookmark_comment_controller)
+    bookmark_comment_navi_controller.navigationBar.translucent = false
+    self.presentViewController(
+      bookmark_comment_navi_controller,
+      animated: true,
+      completion: nil
+    )
   end
 end

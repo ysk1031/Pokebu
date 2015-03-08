@@ -1,52 +1,53 @@
-class BookmarkCommentController < UIViewController
-  attr_accessor :url
+class BookmarkCommentController < UITableViewController
+  attr_accessor :item
+
+  BOOKMARK_CELL_ID = "Bookmark"
 
   def viewDidLoad
     super
 
     self.title = "ブックマーク"
+    self.view.backgroundColor = UIColor.whiteColor
 
-    @back_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(101, target: self, action: 'go_back')
-    reload_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(
-      UIBarButtonSystemItemRefresh, target: self, action: 'reload'
+    @bookmarks = []
+
+    self.navigationItem.leftBarButtonItem = UIBarButtonItem.alloc.initWithTitle(
+      '閉じる', style: UIBarButtonItemStylePlain, target: self, action: 'close'
     )
-    flexible_space = UIBarButtonItem.alloc.initWithBarButtonSystemItem(
-      UIBarButtonSystemItemFlexibleSpace, target: nil, action: nil
-    )
-    fixed_space = UIBarButtonItem.alloc.initWithBarButtonSystemItem(
-      UIBarButtonSystemItemFixedSpace, target: nil, action: nil
-    )
-    fixed_space.width = 50
 
-    toolbar_items = [
-      @back_button,
-      fixed_space,
-      reload_button,
-      flexible_space
-    ]
-
-    self.navigationController.setToolbarHidden(false, animated: false)
-    self.navigationController.toolbar.translucent = false
-    self.setToolbarItems(toolbar_items, animated: false)
-
-    @web_view = UIWebView.new.tap do |v|
-      v.scalesPageToFit = true
-      v.backgroundColor = UIColor.whiteColor
-      v.loadRequest(NSURLRequest.requestWithURL url)
-      v.delegate = self
+    @indicator = UIActivityIndicatorView.alloc.initWithActivityIndicatorStyle(UIActivityIndicatorViewStyleGray).tap do |i|
+      i.center           = [self.view.center.x, self.view.center.y - 100]
+      i.hidesWhenStopped = true
     end
-    self.view = @web_view
+    @indicator.startAnimating
+
+    Bookmark.fetch_bookmarks(item.url) do |bookmarks, error|
+      if error.nil?
+        @bookmarks = bookmarks
+        self.tableView.reloadData
+      else
+        alert_controller = UIAlertController.setErrorMessage error
+        self.presentViewController(alert_controller, animated: true, completion: nil)
+      end
+      @indicator.stopAnimating
+    end
   end
 
-  def go_back
-    @web_view.goBack
+  def tableView(tableView, cellForRowAtIndexPath: indexPath)
+    bookmark = @bookmarks[indexPath.row]
+    cell = tableView.dequeueReusableCellWithIdentifier(BOOKMARK_CELL_ID) ||
+      UITableViewCell.alloc.initWithStyle(UITableViewCellStyleSubtitle, reuseIdentifier: BOOKMARK_CELL_ID)
+    cell.textLabel.text = bookmark.user_name
+    cell.detailTextLabel.text = bookmark.comment
+
+    cell
   end
 
-  def reload
-    @web_view.reload
+  def tableView(tableView, numberOfRowsInSection: section)
+    @bookmarks.count
   end
 
-  def webViewDidFinishLoad(web_view)
-    @back_button.enabled = web_view.canGoBack
+  def close
+    self.dismissViewControllerAnimated(true, completion: nil)
   end
 end

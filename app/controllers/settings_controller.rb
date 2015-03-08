@@ -5,6 +5,7 @@ class SettingsController < UITableViewController
     super
 
     self.title = '設定'
+    self.view.backgroundColor = UIColor.whiteColor
 
     @settings = Setting.initialize_in_bulk
 

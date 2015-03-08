@@ -12,7 +12,6 @@ class PocketItemsController < UITableViewController
     @last_items_size = 0
 
     @indicator = UIActivityIndicatorView.alloc.initWithActivityIndicatorStyle(UIActivityIndicatorViewStyleGray)
-    @indicator.stopAnimating
     start_indicator
 
     @last_fetch_time = Time.now.to_i
