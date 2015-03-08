@@ -122,9 +122,7 @@ class PocketItemView < UIScrollView
       b.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0)
       b.titleLabel.font = UIFont.systemFontOfSize(16)
       b.titleLabel.lineBreakMode = NSLineBreakByWordWrapping
-      b.setTitle(bookmark_text, forState: UIControlStateNormal)
-      b.setTitleColor(UIColor.themeColorGreen, forState: UIControlStateNormal)
-      b.setTitleColor(UIColor.themeColorRed, forState: UIControlStateHighlighted)
+      b.setAttributedTitle(bookmark_text, forState: UIControlStateNormal)
     end
     self.addSubview bookmarkCountButton
     self.bookmark_button = bookmarkCountButton
@@ -140,7 +138,22 @@ class PocketItemView < UIScrollView
   end
 
   def bookmarkDisplayText(item)
-    "#{item.bookmark_count || 0} ブックマーク"
+    bookmark_text = "#{item.bookmark_count || 0} ブックマーク"
+    bold_text_range = NSMakeRange(0, bookmark_text =~ /\s/)
+
+    ns_mutable_bookmark_text = NSMutableAttributedString.alloc.initWithString(bookmark_text)
+    ns_mutable_bookmark_text.addAttribute(NSForegroundColorAttributeName,
+      value: UIColor.grayColor,
+      range: NSMakeRange(0, bookmark_text.length)
+    )
+    ns_mutable_bookmark_text.addAttribute(NSForegroundColorAttributeName,
+      value: UIColor.blackColor,
+      range: bold_text_range
+    )
+    ns_mutable_bookmark_text.addAttribute(NSFontAttributeName,
+      value: UIFont.boldSystemFontOfSize(16),
+      range: bold_text_range
+    )
   end
 
   def linkAttributes
@@ -165,22 +178,20 @@ class PocketItemView < UIScrollView
   end
 
   def loadBookmarkCount(item)
-    # if item.bookmark_count.nil?
-      Dispatch::Queue.concurrent.async do
-        item.getBookmarkCount do |bookmark_count, error|
-          Dispatch::Queue.main.async do
-            if error.nil?
-              bookmark_text = bookmarkDisplayText(item)
-              # UIButtonのタイトル変更時のアニメーションのせいで文字がちらつくので、
-              # この時のみアニメーションをオフにする
-              UIView.setAnimationsEnabled false
-              self.bookmark_button.setTitle(bookmark_text, forState: UIControlStateNormal)
-              self.bookmark_button.layoutIfNeeded
-              UIView.setAnimationsEnabled true
-            end
+    Dispatch::Queue.concurrent.async do
+      item.getBookmarkCount do |bookmark_count, error|
+        Dispatch::Queue.main.async do
+          if error.nil?
+            bookmark_text = bookmarkDisplayText(item)
+            # UIButtonのタイトル変更時のアニメーションのせいで文字がちらつくので、
+            # この時のみアニメーションをオフにする
+            UIView.setAnimationsEnabled false
+            self.bookmark_button.setAttributedTitle(bookmark_text, forState: UIControlStateNormal)
+            self.bookmark_button.layoutIfNeeded
+            UIView.setAnimationsEnabled true
           end
         end
       end
-    # end
+    end
   end
 end

@@ -23,8 +23,7 @@ class PocketItemCell < UITableViewCell
     # タイトル
     @titleLabel = UILabel.new.tap do |l|
       l.lineBreakMode = NSLineBreakByTruncatingTail
-      l.font          = UIFont.systemFontOfSize(16)
-      # UIFont.boldSystemFontOfSize(15)の方が良い？
+      l.font          = UIFont.boldSystemFontOfSize(15)
     end
     self.contentView.addSubview @titleLabel
 
