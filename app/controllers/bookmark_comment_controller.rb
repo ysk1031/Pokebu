@@ -20,6 +20,7 @@ class BookmarkCommentController < UITableViewController
       i.hidesWhenStopped = true
     end
     @indicator.startAnimating
+    self.view.addSubview @indicator
 
     Bookmark.fetch_bookmarks(item.url) do |bookmarks, error|
       if error.nil?
