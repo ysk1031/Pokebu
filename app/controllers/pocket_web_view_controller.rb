@@ -1,4 +1,6 @@
 class PocketWebViewController < UIViewController
+  include Pokebu::PocketItemHandler
+
   attr_accessor :item
 
   def viewDidLoad
@@ -31,6 +33,9 @@ class PocketWebViewController < UIViewController
     bookmark_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(
       UIBarButtonSystemItemAdd, target: self, action: 'bookmark'
     )
+    archive_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(
+      UIBarButtonSystemItemOrganize, target: self, action: 'alertArchive'
+    )
     action_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(
       UIBarButtonSystemItemAction, target: self, action: 'do_action'
     )
@@ -44,6 +49,8 @@ class PocketWebViewController < UIViewController
       reload_button,
       flexible_space,
       bookmark_button,
+      flexible_space,
+      archive_button,
       flexible_space,
       action_button
     ]
