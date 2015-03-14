@@ -1,5 +1,6 @@
 class BookmarkCommentCell < UITableViewCell
   BOOKMARK_CELL_ID = "Bookmark"
+  TIMESTAMP_LENGTH = 75
 
   def self.setBookmark(bookmark, inTableView: tableView)
     cell = tableView.dequeueReusableCellWithIdentifier(BOOKMARK_CELL_ID) ||
@@ -51,17 +52,17 @@ class BookmarkCommentCell < UITableViewCell
     userIDLabelOriginX = @iconView.right + 6
     @userIDLabel.frame = [
       [userIDLabelOriginX, 10],
-      [self.frame.size.width - userIDLabelOriginX - 80, 100]
+      [self.frame.size.width - userIDLabelOriginX - TIMESTAMP_LENGTH - 5, 100]
     ]
     @userIDLabel.text = bookmark.user_name
     @userIDLabel.numberOfLines = 1
     @userIDLabel.sizeToFit
 
     # タイムスタンプ
-    addedTimeLabelOriginX = self.frame.size.width - 80
+    addedTimeLabelOriginX = self.frame.size.width - TIMESTAMP_LENGTH - 5
     @addedTimeLabel.frame = [
       [addedTimeLabelOriginX, 10],
-      [75, 100]
+      [TIMESTAMP_LENGTH, 100]
     ]
     @addedTimeLabel.text = bookmark.added_time
     @addedTimeLabel.numberOfLines = 1
@@ -70,10 +71,11 @@ class BookmarkCommentCell < UITableViewCell
     # コメント
     @commentLabel.frame = [
       [userIDLabelOriginX, @userIDLabel.bottom + 3],
-      [self.frame.size.width - userIDLabelOriginX - 5, 300]
+      [self.frame.size.width - userIDLabelOriginX - 10, 300]
     ]
     @commentLabel.text = bookmark.comment
     @commentLabel.numberOfLines = 0
+    @commentLabel.lineBreakMode = NSLineBreakByWordWrapping
     @commentLabel.sizeToFit
   end
 end

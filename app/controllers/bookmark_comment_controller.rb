@@ -17,6 +17,18 @@ class BookmarkCommentController < UITableViewController
     load_bookmarks
   end
 
+  def tableView(tableView, heightForRowAtIndexPath: indexPath)
+    bookmark = @bookmarks[indexPath.row]
+    variableRect = bookmark.comment.boundingRectWithSize(
+      CGSizeMake(self.view.frame.size.width - 56 - 10, CGFLOAT_MAX),
+      options: NSStringDrawingUsesLineFragmentOrigin,
+      attributes: { NSFontAttributeName: UIFont.systemFontOfSize(13) },
+      context: nil
+    )
+
+    [variableRect.size.height + 50, 65].max
+  end
+
   def tableView(tableView, cellForRowAtIndexPath: indexPath)
     bookmark = @bookmarks[indexPath.row]
     BookmarkCommentCell.setBookmark(bookmark, inTableView: tableView)
