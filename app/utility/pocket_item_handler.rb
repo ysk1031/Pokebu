@@ -3,8 +3,8 @@ module Pokebu
     def alertArchive
       alert_controller = UIAlertController.alertControllerWithTitle(
         '確認',
-        message: 'この記事をアーカイブしてもよろしいですか？',
-        preferredStyle: UIAlertControllerStyleAlert
+        message: 'この記事をアーカイブしますか？',
+        preferredStyle: UIAlertControllerStyleActionSheet
       )
       cancel = UIAlertAction.actionWithTitle(
         'キャンセル',
@@ -18,8 +18,8 @@ module Pokebu
           runArchive
         end
       )
-      alert_controller.addAction(cancel)
       alert_controller.addAction(ok)
+      alert_controller.addAction(cancel)
       self.presentViewController(alert_controller, animated: true, completion: nil)
     end
 
