@@ -1,5 +1,7 @@
 class AppDelegate
   def application(application, didFinishLaunchingWithOptions:launchOptions)
+    clearCache
+
     initialize_pocket_sdk
 
     if PocketAPI.sharedAPI.loggedIn?
@@ -18,6 +20,11 @@ class AppDelegate
     initialize_navigation_bar
 
     true
+  end
+
+  def clearCache
+    NSURLCache.sharedURLCache.diskCapacity = 0
+    NSURLCache.sharedURLCache.memoryCapacity = 0
   end
 
   def initialize_window
@@ -54,6 +61,11 @@ class AppDelegate
 
   def applicationDidBecomeActive(application)
     initialize_hatebu_sdk
+  end
+
+  def applicationDidReceiveMemoryWarning(application)
+    NSURLCache.sharedURLCache.removeAllCachedResponses  # 不要？
+    clearCache
   end
 
   def alert_pocket_login_failure(error_message)

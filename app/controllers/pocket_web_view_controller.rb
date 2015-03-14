@@ -87,4 +87,11 @@ class PocketWebViewController < UIViewController
     @back_button.enabled = webView.canGoBack
     @indicator.stopAnimating
   end
+
+  def didReceiveMemoryWarning
+    super
+    NSURLCache.sharedURLCache.removeAllCachedResponses  # 不要？
+    NSURLCache.sharedURLCache.diskCapacity = 0
+    NSURLCache.sharedURLCache.memoryCapacity = 0
+  end
 end
