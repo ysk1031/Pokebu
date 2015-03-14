@@ -19,7 +19,8 @@ class PocketItem
   end
 
   def added_time
-    Time.at(@timestamp).timeAgo
+    # Time.at(@timestamp).timeAgo
+    Time.at(@timestamp).strftime("%Y/%m/%d")
   end
 
 

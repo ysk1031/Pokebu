@@ -102,7 +102,7 @@ class PocketItemView < UIScrollView
     dateLabel = UILabel.new.tap do |l|
       l.frame = [[titleLabelOriginX, urlLabel.bottom + 5], [fullWidth - titleLabelOriginX - 10, 960]]
       l.lineBreakMode = NSLineBreakByCharWrapping
-      l.text = "#{item.added_time}に追加"
+      l.text = "#{item.added_time} に追加"
       l.textColor = UIColor.grayColor
       l.font = UIFont.systemFontOfSize(13)
       l.numberOfLines = 1

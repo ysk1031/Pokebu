@@ -1,8 +1,6 @@
 class BookmarkCommentController < UITableViewController
   attr_accessor :item
 
-  BOOKMARK_CELL_ID = "Bookmark"
-
   def viewDidLoad
     super
 
@@ -15,13 +13,33 @@ class BookmarkCommentController < UITableViewController
       '閉じる', style: UIBarButtonItemStylePlain, target: self, action: 'close'
     )
 
+    initialize_indicator
+    load_bookmarks
+  end
+
+  def tableView(tableView, cellForRowAtIndexPath: indexPath)
+    bookmark = @bookmarks[indexPath.row]
+    BookmarkCommentCell.setBookmark(bookmark, inTableView: tableView)
+  end
+
+  def tableView(tableView, numberOfRowsInSection: section)
+    @bookmarks.count
+  end
+
+  def close
+    self.dismissViewControllerAnimated(true, completion: nil)
+  end
+
+  def initialize_indicator
     @indicator = UIActivityIndicatorView.alloc.initWithActivityIndicatorStyle(UIActivityIndicatorViewStyleGray).tap do |i|
       i.center           = [self.view.center.x, self.view.center.y - 100]
       i.hidesWhenStopped = true
     end
     @indicator.startAnimating
     self.view.addSubview @indicator
+  end
 
+  def load_bookmarks
     Bookmark.fetch_bookmarks(item.url) do |bookmarks, error|
       if error.nil?
         @bookmarks = bookmarks
@@ -32,23 +50,5 @@ class BookmarkCommentController < UITableViewController
       end
       @indicator.stopAnimating
     end
-  end
-
-  def tableView(tableView, cellForRowAtIndexPath: indexPath)
-    bookmark = @bookmarks[indexPath.row]
-    cell = tableView.dequeueReusableCellWithIdentifier(BOOKMARK_CELL_ID) ||
-      UITableViewCell.alloc.initWithStyle(UITableViewCellStyleSubtitle, reuseIdentifier: BOOKMARK_CELL_ID)
-    cell.textLabel.text = bookmark.user_name
-    cell.detailTextLabel.text = bookmark.comment
-
-    cell
-  end
-
-  def tableView(tableView, numberOfRowsInSection: section)
-    @bookmarks.count
-  end
-
-  def close
-    self.dismissViewControllerAnimated(true, completion: nil)
   end
 end
