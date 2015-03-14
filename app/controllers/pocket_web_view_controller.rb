@@ -1,5 +1,6 @@
 class PocketWebViewController < UIViewController
   include Pokebu::PocketItemHandler
+  include Pokebu::BookmarkActivity
 
   attr_accessor :item
 
@@ -72,12 +73,6 @@ class PocketWebViewController < UIViewController
 
   def reload
     @webView.reload
-  end
-
-  def bookmark
-    bookmark_view_controller = HTBHatenaBookmarkViewController.new
-    bookmark_view_controller.URL = item.url.url_encode.nsurl
-    self.presentViewController(bookmark_view_controller, animated: true, completion: nil)
   end
 
   def do_action

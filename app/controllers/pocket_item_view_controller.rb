@@ -1,5 +1,6 @@
 class PocketItemViewController < UIViewController
   include Pokebu::PocketItemHandler
+  include Pokebu::BookmarkActivity
 
   attr_accessor :item
 
@@ -43,12 +44,6 @@ class PocketItemViewController < UIViewController
     pocket_web_view_controller = PocketWebViewController.new
     pocket_web_view_controller.item = item
     self.navigationController.pushViewController(pocket_web_view_controller, animated: true)
-  end
-
-  def bookmark
-    bookmark_view_controller = HTBHatenaBookmarkViewController.new
-    bookmark_view_controller.URL = item.url.url_encode.nsurl
-    self.presentViewController(bookmark_view_controller, animated: true, completion: nil)
   end
 
   def do_action
