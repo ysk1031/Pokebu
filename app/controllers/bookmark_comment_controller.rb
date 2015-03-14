@@ -13,6 +13,9 @@ class BookmarkCommentController < UITableViewController
       '閉じる', style: UIBarButtonItemStylePlain, target: self, action: 'close'
     )
 
+    # セルへのタップを無効に
+    self.tableView.allowsSelection = false
+
     initialize_indicator
     load_bookmarks
   end
