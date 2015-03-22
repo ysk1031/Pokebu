@@ -4,7 +4,7 @@ class BookmarkCommentController < UITableViewController
   def viewDidLoad
     super
 
-    self.title = "ブックマーク"
+    self.title = "ブックマークコメント"
     self.view.backgroundColor = UIColor.whiteColor
 
     @bookmarks = []
@@ -23,13 +23,12 @@ class BookmarkCommentController < UITableViewController
   def tableView(tableView, heightForRowAtIndexPath: indexPath)
     bookmark = @bookmarks[indexPath.row]
     variableRect = bookmark.comment.boundingRectWithSize(
-      CGSizeMake(self.view.frame.size.width - 56 - 10, CGFLOAT_MAX),
+      CGSizeMake(self.view.frame.size.width - 100, CGFLOAT_MAX),  # コメントの表示幅より短めのwidthを指定、100は適当...
       options: NSStringDrawingUsesLineFragmentOrigin,
       attributes: { NSFontAttributeName: UIFont.systemFontOfSize(13) },
       context: nil
     )
-
-    [variableRect.size.height + 50, 65].max
+    variableRect.size.height + 55  # 55は適当...
   end
 
   def tableView(tableView, cellForRowAtIndexPath: indexPath)

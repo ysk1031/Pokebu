@@ -34,7 +34,7 @@ class BookmarkCommentCell < UITableViewCell
 
     # コメント
     @commentLabel = UILabel.new.tap do |l|
-      l.font = UIFont.systemFontOfSize(13)
+      l.font = UIFont.systemFontOfSize(14)
     end
     self.contentView.addSubview @commentLabel
 

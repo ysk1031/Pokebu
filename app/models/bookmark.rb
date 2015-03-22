@@ -10,7 +10,11 @@ class Bookmark
         error_message = nil
         begin
           if result.success?
-            result.object["bookmarks"].each{|data| bookmarks << self.new(data) }
+            # 全件表示
+            # result.object["bookmarks"].each{|data| bookmarks << self.new(data) }
+
+            # コメント付きのみ表示
+            result.object["bookmarks"].each{|data| bookmarks << self.new(data) unless data["comment"].empty? }
           elsif result.failure?
             error_message = result.error.localizedDescription
           else
