@@ -45,7 +45,8 @@ class AppInformationController < ConfigController
   end
 
   def open_about_page
-
+    about_app_controller = AboutAppController.new
+    self.navigationController.pushViewController(about_app_controller, animated: true)
   end
 
   def open_my_blog
