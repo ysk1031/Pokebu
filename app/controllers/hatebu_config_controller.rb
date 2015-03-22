@@ -1,7 +1,7 @@
 class HatebuConfigController < ConfigController
   def viewDidLoad
     super
-    self.title = '設定'
+    self.title = 'サービス連携'
     @setting_element = [
       {
         title: 'はてなブックマークアカウント',

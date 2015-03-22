@@ -24,7 +24,7 @@ class SettingsController < UITableViewController
   def tableView(tableView, titleForHeaderInSection: section)
     case section
     when 0
-      "サービス"
+      "サービス連携"
     when 1
       "その他"
     else
@@ -105,7 +105,8 @@ class SettingsController < UITableViewController
   end
 
   def app_information
-
+    app_info_controller = AppInformationController.alloc.initWithStyle(UITableViewStyleGrouped)
+    self.navigationController.pushViewController(app_info_controller, animated: true)
   end
 
   def close
