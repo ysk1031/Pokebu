@@ -25,7 +25,7 @@ PODS:
   - NSDate+TimeAgo (1.0.3)
   - PocketAPI (1.0.3)
   - SFHFKeychainUtils (0.0.1)
-  - TTTAttributedLabel (1.13.2)
+  - TTTAttributedLabel (1.13.3)
 
 DEPENDENCIES:
   - AFNetworking
@@ -56,6 +56,6 @@ SPEC CHECKSUMS:
   NSDate+TimeAgo: f3533e0198fab05b716368b19f8c2185d53d6f3b
   PocketAPI: 561fd4f428a38a4662c5837247c85f9962393f01
   SFHFKeychainUtils: 6fdda05a86d035db406c7662ec1054814b68f0fd
-  TTTAttributedLabel: 7c4592f9a806badb8b48dc634cb9800447c51594
+  TTTAttributedLabel: 6f3174aef8e738f44dff97c2eb7d8184f6ab6277
 
 COCOAPODS: 0.36.0
