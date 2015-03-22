@@ -151,7 +151,7 @@ class PocketItemsController < UITableViewController
   end
 
   def open_setting
-    settings_controller = SettingsController.new
+    settings_controller = SettingsController.alloc.initWithStyle(UITableViewStyleGrouped)
     setting_navi_controller = UINavigationController.alloc.initWithRootViewController(settings_controller)
     setting_navi_controller.navigationBar.translucent = false
     self.presentViewController(

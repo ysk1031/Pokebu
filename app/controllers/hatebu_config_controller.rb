@@ -4,7 +4,7 @@ class HatebuConfigController < ConfigController
     self.title = '設定'
     @setting_element = [
       {
-        title: 'はてなブックマーク',
+        title: 'はてなブックマークアカウント',
         cell: [
           {
             label: '連携を解除',

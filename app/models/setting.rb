@@ -1,22 +1,28 @@
 class Setting
   attr_accessor :title, :action
 
-  SETTING_INFOS = [
-    %w(Pocketアカウント pocket),
-    %w(はてなブックマークアカウント hatebu),
-    %w(このアプリについて fuga)
+  SETTING_SECTIONS = [
+    [
+      { title: "Pocketアカウント", action: "pocket" },
+      { title: "はてなブックマークアカウント", action: "hatena" }
+    ],
+    [
+      { title: "このアプリについて", action: "app_info" }
+    ]
   ]
 
   def initialize(info)
-    @title = info[:title]
+    @title  = info[:title]
     @action = info[:action]
   end
 
   def self.initialize_in_bulk
     settings = []
-    SETTING_INFOS.each do |info|
-      setting_info = { title: info[0], action: info[1] }
-      settings << self.new(setting_info)
+    SETTING_SECTIONS.each_with_index do |section, index|
+      settings[index] = []
+      section.each do |attr|
+        settings[index] << self.new(attr)
+      end
     end
 
     settings
