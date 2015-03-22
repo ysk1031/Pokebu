@@ -38,7 +38,6 @@ Motion::Project::App.setup do |app|
   app.pods do
     pod 'AFNetworking'
     pod 'TTTAttributedLabel'
-    pod 'NSDate+TimeAgo'
     pod 'HatenaBookmarkSDK', git: 'git@github.com:hatena/Hatena-Bookmark-iOS-SDK.git'
     pod 'PocketAPI', git: 'git@github.com:ysk1031/Pocket-ObjC-SDK.git',
       branch: 'cocoapods-dependency'

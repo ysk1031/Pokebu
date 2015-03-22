@@ -46,7 +46,6 @@ class Bookmark
       time_format_array[3], time_format_array[4], time_format_array[5]
     )
 
-    # time.timeAgo
     time.strftime("%Y/%m/%d")
   end
 end
