@@ -57,7 +57,7 @@ class AboutAppController < UIViewController
         height: 100%;
         overflow-y: scroll;
         overflow-x: hidden;
-        font-size: 1.0em;
+        font-size: 2.2em;
     }
 
     #wrapper::-webkit-scrollbar {
@@ -111,12 +111,12 @@ class AboutAppController < UIViewController
     h2,
     h3 { margin-bottom: 1rem; }
 
-    h1 { font-size: 2.75rem; }
-    h2 { font-size: 2.25rem; }
-    h3 { font-size: 1.75rem; }
-    h4 { font-size: 1.25rem; }
-    h5 { font-size: 1.00rem; }
-    h6 { font-size: 0.85rem; }
+    h1 { font-size: 3.25rem; }
+    h2 { font-size: 2.75rem; }
+    h3 { font-size: 2.25rem; }
+    h4 { font-size: 1.75rem; }
+    h5 { font-size: 1.5rem; }
+    h6 { font-size: 1.35rem; }
 
     /**
      *
