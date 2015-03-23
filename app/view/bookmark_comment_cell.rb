@@ -44,7 +44,7 @@ class BookmarkCommentCell < UITableViewCell
   def updateViewForBookmark(bookmark)
     # アイコン
     @iconView.setImageWithURL(
-      bookmark.user_image.url_encode.nsurl,
+      bookmark.user_image.nsurl,
       placeholderImage: nil
     )
 

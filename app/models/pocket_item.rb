@@ -33,7 +33,7 @@ class PocketItem
         "&since=#{since_time}&detailType=complete"
       end
 
-    AFMotion::JSON.get(url.url_encode) do |result|
+    AFMotion::JSON.get(url) do |result|
       items = []
       error_message = nil
       begin
@@ -88,10 +88,11 @@ class PocketItem
       options: NSJSONWritingPrettyPrinted,
       error: nil
     )
-    url = "#{BASE_URL}send?consumer_key=#{MY_ENV['pocket']['consumer_key']}&access_token=#{PocketAPI.sharedAPI.pkt_getToken}" \
-      "&actions=#{archive_request_json}"
 
-    AFMotion::JSON.get(url.url_encode) do |result|
+    url = "#{BASE_URL}send?consumer_key=#{MY_ENV['pocket']['consumer_key']}&access_token=#{PocketAPI.sharedAPI.pkt_getToken}" \
+      "&actions=#{archive_request_json.to_s.url_encode}"
+
+    AFMotion::JSON.get(url) do |result|
       response = false
       error_message = nil
       begin

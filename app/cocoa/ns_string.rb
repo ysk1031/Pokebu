@@ -1,6 +1,13 @@
 class NSString
   def url_encode
-    self.stringByAddingPercentEscapesUsingEncoding NSUTF8StringEncoding
+    # self.stringByAddingPercentEscapesUsingEncoding NSUTF8StringEncoding
+    CFURLCreateStringByAddingPercentEscapes(
+      nil,
+      self,
+      nil,
+      "!*'();:@&=+$,/?%#[]",
+      KCFStringEncodingUTF8
+    )
   end
 
   def nsurl

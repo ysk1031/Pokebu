@@ -24,7 +24,7 @@ class PocketItemView < UIScrollView
     faviconView = UIImageView.new.tap do |v|
       v.frame = [[10, 15], [16, 16]]
       v.setImageWithURL(
-        "#{GOOGLE_FAVICON_URL}?domain=#{url_domain}".url_encode.nsurl,
+        "#{GOOGLE_FAVICON_URL}?domain=#{url_domain}".nsurl,
         placeholderImage: @@placeholder_favicon
       )
     end
@@ -45,7 +45,7 @@ class PocketItemView < UIScrollView
       l.linkAttributes = linkAttributes
       l.activeLinkAttributes = activeLinkAttributes
       l.addLinkToURL(
-        item.url.url_encode.nsurl,
+        item.url.nsurl,
         withRange: item.title.rangeOfString(item.title)
       )
       l.delegate = controller
@@ -57,7 +57,7 @@ class PocketItemView < UIScrollView
     unless item.asset_src.nil?
       imageView = UIImageView.new.tap do |v|
         v.contentMode = UIViewContentModeScaleAspectFit
-        v.setImageWithURL(item.asset_src.url_encode.nsurl)
+        v.setImageWithURL(item.asset_src.nsurl)
         v.frame = [[fullWidth - SQUARE_IMAGE_SIDE - 10, titleLabel.bottom + 10], [SQUARE_IMAGE_SIDE, SQUARE_IMAGE_SIDE]]
       end
       self.addSubview imageView

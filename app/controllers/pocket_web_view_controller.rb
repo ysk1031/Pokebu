@@ -16,7 +16,7 @@ class PocketWebViewController < UIViewController
       v.scalesPageToFit = true
       v.backgroundColor = UIColor.whiteColor
       v.delegate        = self
-      v.loadRequest(NSURLRequest.requestWithURL(item.url.url_encode.nsurl))
+      v.loadRequest(NSURLRequest.requestWithURL(item.url.nsurl))
     end
     self.view.addSubview @webView
 
@@ -77,7 +77,7 @@ class PocketWebViewController < UIViewController
 
   def do_action
     self.presentViewController(
-      UrlActionController.alloc.initWithActivities([item.url.url_encode.nsurl]),
+      UrlActionController.alloc.initWithActivities([item.url.nsurl]),
       animated: true,
       completion: nil
     )

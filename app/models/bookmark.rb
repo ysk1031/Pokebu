@@ -3,7 +3,7 @@ class Bookmark
 
   class << self
     def fetch_bookmarks(entry_url, &block)
-      url = "http://b.hatena.ne.jp/entry/jsonlite/?url=#{entry_url}".url_encode
+      url = "http://b.hatena.ne.jp/entry/jsonlite/?url=#{entry_url.url_encode}"
 
       AFMotion::JSON.get(url) do |result|
         bookmarks = []

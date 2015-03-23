@@ -43,7 +43,7 @@ class PocketItemCell < UITableViewCell
 
     # favicon
     @faviconView.setImageWithURL(
-      "#{GOOGLE_FAVICON_URL}?domain=#{url_domain}".url_encode.nsurl,
+      "#{GOOGLE_FAVICON_URL}?domain=#{url_domain}".nsurl,
       placeholderImage: @@placeholder_favicon
     )
 

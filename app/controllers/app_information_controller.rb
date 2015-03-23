@@ -50,12 +50,12 @@ class AppInformationController < ConfigController
   end
 
   def open_my_blog
-    url = "http://yusuke-aono.hatenablog.com".url_encode.nsurl
+    url = "http://yusuke-aono.hatenablog.com".nsurl
     UIApplication.sharedApplication.openURL url
   end
 
   def open_github
-    url = "https://github.com/ysk1031/Pokebu".url_encode.nsurl
+    url = "https://github.com/ysk1031/Pokebu".nsurl
     UIApplication.sharedApplication.openURL url
   end
 end
