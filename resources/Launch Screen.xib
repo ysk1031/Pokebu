@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14D113c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -10,38 +11,29 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
-                    <rect key="frame" x="20" y="439" width="441" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pokebu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pq9-ls-LaQ">
+                    <rect key="frame" x="339" y="385" width="126" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="pq9-ls-LaQ" secondAttribute="height" multiplier="14:5" id="wMz-yk-K5d"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="32"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
-                    <variation key="widthClass=compact">
-                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="wMz-yk-K5d"/>
+                        </mask>
                     </variation>
                 </label>
-                <navigationBar contentMode="scaleToFill" misplaced="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75u-b1-E89">
-                    <rect key="frame" x="0.0" y="8" width="480" height="44"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="64" id="5dG-sg-y3o"/>
-                    </constraints>
-                    <color key="barTintColor" red="0.30588235289999999" green="0.72156862749999995" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <items>
-                        <navigationItem id="ikd-xB-Cdf"/>
-                    </items>
-                </navigationBar>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.30588235289999999" green="0.72156862749999995" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="75u-b1-E89" secondAttribute="trailing" id="0M8-ga-zc4"/>
-                <constraint firstItem="75u-b1-E89" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3f4-9C-BvX"/>
-                <constraint firstItem="75u-b1-E89" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7UZ-br-ap0"/>
-                <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
-                <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
-                <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
+                <constraint firstAttribute="bottom" secondItem="pq9-ls-LaQ" secondAttribute="bottom" constant="50" id="Fgw-OQ-dKu"/>
+                <constraint firstAttribute="trailing" secondItem="pq9-ls-LaQ" secondAttribute="trailing" constant="20" id="sZ1-1k-glV"/>
             </constraints>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+            <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="325" y="255"/>
+            <point key="canvasLocation" x="324" y="315"/>
         </view>
     </objects>
 </document>
