@@ -1,0 +1,841 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		19C8FD9B2708FB6FDFC29C45 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25901D65084427914A202A8C /* CoreData.framework */; };
+		2E00A00DA3E5E0F21DB4145A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4C317832E4465157D00AB1D /* CoreGraphics.framework */; };
+		82568B176640378800A53891 /* Stubs.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5273778F4089A18217284C /* Stubs.m */; };
+		E29E099AC8FDBC09064C9AB4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 191E850BBBBBBF4E807003D7 /* QuartzCore.framework */; };
+		EC1AAE3125844D50605916A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE676DD66F29A60436F632F /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		015B84CED09BF53060B89785 /* PocketAPITypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PocketAPITypes.h; path = Public/PocketAPI/PocketAPITypes.h; sourceTree = "<group>"; };
+		01B26296FD6382C18417BBAF /* zh_Hans.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = zh_Hans.lproj; path = NSDateTimeAgo.bundle/zh_Hans.lproj; sourceTree = "<group>"; };
+		01E68B6F558DD39A29936E74 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = Public/AFNetworking/AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		0347BD9D403D17CF17A540E3 /* ja.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = ja.lproj; sourceTree = "<group>"; };
+		0389BDAB364277E61B49D611 /* HTBBookmarkToolbarView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBBookmarkToolbarView.h; path = Public/HatenaBookmarkSDK/HTBBookmarkToolbarView.h; sourceTree = "<group>"; };
+		03D6EBA946E8BE84C07D506D /* HTBToggleButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBToggleButton.h; path = Public/HatenaBookmarkSDK/HTBToggleButton.h; sourceTree = "<group>"; };
+		04FA88E7BF0D387CDCF32C6F /* keyboard-button.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "keyboard-button.png"; path = "HTBResources.bundle/Images7/keyboard-button.png"; sourceTree = "<group>"; };
+		061C39E77398659633D0B851 /* HTBHatenaBookmarkViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBHatenaBookmarkViewController.h; path = Public/HatenaBookmarkSDK/HTBHatenaBookmarkViewController.h; sourceTree = "<group>"; };
+		06C37465A8A1EDC5CA776B03 /* HTBUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBUtility.h; path = Public/HatenaBookmarkSDK/HTBUtility.h; sourceTree = "<group>"; };
+		07951C4C06F1A041A2F84C51 /* addbookmark-facebook-icon.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "addbookmark-facebook-icon.png"; path = "HTBResources.bundle/Images/addbookmark-facebook-icon.png"; sourceTree = "<group>"; };
+		087379B579ED718AB3F01B61 /* addbookmark-facebook-icon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "addbookmark-facebook-icon@2x.png"; path = "HTBResources.bundle/Images/addbookmark-facebook-icon@2x.png"; sourceTree = "<group>"; };
+		091DD962F212A00311A51DB2 /* nl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = nl.lproj; sourceTree = "<group>"; };
+		09CC92CD51CEBC2057C576CC /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "Public/AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
+		0A11D970B52E79BC835E994E /* keyboard-button.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "keyboard-button.png"; path = "HTBResources.bundle/Images/keyboard-button.png"; sourceTree = "<group>"; };
+		0BC0495E709DD5AAA656B471 /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "Private/AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
+		0CE1297CCE3B446154E41DED /* HTBHatenaBookmarkManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBHatenaBookmarkManager.h; path = Private/HatenaBookmarkSDK/HTBHatenaBookmarkManager.h; sourceTree = "<group>"; };
+		0F69FF36744456533E77A87E /* HTBBookmarkEntry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBBookmarkEntry.h; path = Public/HatenaBookmarkSDK/HTBBookmarkEntry.h; sourceTree = "<group>"; };
+		0F9704984379BFB21CB595CA /* HTBMyTagsEntry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBMyTagsEntry.h; path = Public/HatenaBookmarkSDK/HTBMyTagsEntry.h; sourceTree = "<group>"; };
+		0FF1CC996144B72FFA62BF6D /* ____Pods-SFHFKeychainUtils-prefix.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "____Pods-SFHFKeychainUtils-prefix.h"; path = "Public/____Pods-SFHFKeychainUtils-prefix.h"; sourceTree = "<group>"; };
+		103CAD31CF0B4534379CE3C4 /* UIImageView+HatenaAFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+HatenaAFNetworking.h"; path = "Private/HatenaBookmarkSDK/UIImageView+HatenaAFNetworking.h"; sourceTree = "<group>"; };
+		118AFE911C9B3CE7349B27B1 /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "Public/AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
+		11C779582414B489FF03EE98 /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = Private/AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
+		135455427BE51CE1D7BCE1BA /* addbookmark-facebook-icon-off@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "addbookmark-facebook-icon-off@2x.png"; path = "HTBResources.bundle/Images/addbookmark-facebook-icon-off@2x.png"; sourceTree = "<group>"; };
+		13844FE4FC180788B0583EF5 /* ja.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = ja.lproj; path = NSDateTimeAgo.bundle/ja.lproj; sourceTree = "<group>"; };
+		13DCB2D64C3F942FF1F29199 /* HatenaAFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HatenaAFNetworkActivityIndicatorManager.h; path = Private/HatenaBookmarkSDK/HatenaAFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		1422C9EC016C58CEBE718D30 /* HatenaAFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HatenaAFNetworkActivityIndicatorManager.h; path = Public/HatenaBookmarkSDK/HatenaAFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		14889F1BFBDF5B2D95839F7E /* keyboard-button@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "keyboard-button@2x.png"; path = "HTBResources.bundle/Images7/keyboard-button@2x.png"; sourceTree = "<group>"; };
+		150D36DD8DD1AF91734B6C7A /* HTBBookmarkRootView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBBookmarkRootView.h; path = Private/HatenaBookmarkSDK/HTBBookmarkRootView.h; sourceTree = "<group>"; };
+		15DFDD41C202F4CC8618ECF0 /* Stubs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Stubs.h; sourceTree = "<group>"; };
+		16409058D5E27F972179B3AC /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = en.lproj; path = NSDateTimeAgo.bundle/en.lproj; sourceTree = "<group>"; };
+		16F21F3E5666E6BBF0691709 /* fr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = fr.lproj; sourceTree = "<group>"; };
+		18974988BC67A5BDD47ED97A /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperationManager.h; path = Public/AFNetworking/AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		18A2475EB480573C5948200B /* header-button-push-landscape@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "header-button-push-landscape@2x.png"; path = "HTBResources.bundle/Images/header-button-push-landscape@2x.png"; sourceTree = "<group>"; };
+		191AB47535D61ADE69A1B160 /* HatenaAFHTTPClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HatenaAFHTTPClient.h; path = Private/HatenaBookmarkSDK/HatenaAFHTTPClient.h; sourceTree = "<group>"; };
+		191E850BBBBBBF4E807003D7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		195163644C37817502302B3B /* no.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = no.lproj; sourceTree = "<group>"; };
+		1AA03B406B217C8CC98B182A /* HatenaAFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HatenaAFNetworking.h; path = Public/HatenaBookmarkSDK/HatenaAFNetworking.h; sourceTree = "<group>"; };
+		1C97F6CBED4D30721BFE58F8 /* header-button-push.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "header-button-push.png"; path = "HTBResources.bundle/Images/header-button-push.png"; sourceTree = "<group>"; };
+		1D125443E3F1E178AEF4292C /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = Private/AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		1DC7EEC5910336223625B814 /* keyboard-button-highlighted@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "keyboard-button-highlighted@2x.png"; path = "HTBResources.bundle/Images/keyboard-button-highlighted@2x.png"; sourceTree = "<group>"; };
+		1E5C1DDC4430EBC2E6C3BC55 /* fi.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = fi.lproj; path = NSDateTimeAgo.bundle/fi.lproj; sourceTree = "<group>"; };
+		1F87A8F4906A1BB2A5C64B51 /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = en.lproj; path = HTBResources.bundle/en.lproj; sourceTree = "<group>"; };
+		208BFB3B87E2A5ED3D3EF1C6 /* HTBTagInputView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBTagInputView.h; path = Public/HatenaBookmarkSDK/HTBTagInputView.h; sourceTree = "<group>"; };
+		212137E9397020AD959C9F01 /* HatenaBookmarkSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HatenaBookmarkSDK.h; path = Public/HatenaBookmarkSDK/HatenaBookmarkSDK.h; sourceTree = "<group>"; };
+		215B2301593BA3161A6C6C38 /* addbookmark-twitter-icon-off.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "addbookmark-twitter-icon-off.png"; path = "HTBResources.bundle/Images/addbookmark-twitter-icon-off.png"; sourceTree = "<group>"; };
+		24310D624BE7F322E8457956 /* HTBPlaceholderTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBPlaceholderTextView.h; path = Public/HatenaBookmarkSDK/HTBPlaceholderTextView.h; sourceTree = "<group>"; };
+		25901D65084427914A202A8C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
+		26CF87FF5A494FE1B13E0D9A /* keyboard.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = keyboard.png; path = HTBResources.bundle/Images7/keyboard.png; sourceTree = "<group>"; };
+		276919AF8D0677227534EA86 /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = Private/AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
+		2797FE2BC7C2F97DEC729D20 /* back-button.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "back-button.png"; path = "HTBResources.bundle/Images/back-button.png"; sourceTree = "<group>"; };
+		27EB4E5B5A249BECFF745E2B /* HatenaBookmarkSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HatenaBookmarkSDK.h; path = Private/HatenaBookmarkSDK/HatenaBookmarkSDK.h; sourceTree = "<group>"; };
+		289097A377FDD5389133EA35 /* ____Pods-HatenaBookmarkSDK-prefix.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "____Pods-HatenaBookmarkSDK-prefix.h"; path = "Public/____Pods-HatenaBookmarkSDK-prefix.h"; sourceTree = "<group>"; };
+		28FBBB6CCB8539EEC450CBF6 /* vi.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = vi.lproj; path = NSDateTimeAgo.bundle/vi.lproj; sourceTree = "<group>"; };
+		294A74E1A0B7DDCE144EE5CD /* HTBCanonicalView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBCanonicalView.h; path = Private/HatenaBookmarkSDK/HTBCanonicalView.h; sourceTree = "<group>"; };
+		2B73D618DA8D85DAA67AB9CA /* addbookmark-mixi-icon.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "addbookmark-mixi-icon.png"; path = "HTBResources.bundle/Images/addbookmark-mixi-icon.png"; sourceTree = "<group>"; };
+		2BFEDF5BC6B1195CC7922F47 /* HatenaAFImageRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HatenaAFImageRequestOperation.h; path = Private/HatenaBookmarkSDK/HatenaAFImageRequestOperation.h; sourceTree = "<group>"; };
+		2C79F0AD9CC998CFC9C7D3B1 /* PocketAPI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PocketAPI.h; path = Public/PocketAPI/PocketAPI.h; sourceTree = "<group>"; };
+		2CCF21B6AF3EDB019E3144AA /* keyboard@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "keyboard@2x.png"; path = "HTBResources.bundle/Images/keyboard@2x.png"; sourceTree = "<group>"; };
+		2EFFDAEB22F0F77505E17F4A /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "Public/AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
+		2F3745A8C574BCC8A0C9B310 /* UIAlertView+HTBNSError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+HTBNSError.h"; path = "Public/HatenaBookmarkSDK/UIAlertView+HTBNSError.h"; sourceTree = "<group>"; };
+		313267632EF68DCABD55913A /* UIAlertView+HTBNSError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+HTBNSError.h"; path = "Private/HatenaBookmarkSDK/UIAlertView+HTBNSError.h"; sourceTree = "<group>"; };
+		314E80F4A49FD7D4F3F02712 /* da.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = da.lproj; path = NSDateTimeAgo.bundle/da.lproj; sourceTree = "<group>"; };
+		3204BDB9ADF26F30122B6CA7 /* HTBCommentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBCommentViewController.h; path = Private/HatenaBookmarkSDK/HTBCommentViewController.h; sourceTree = "<group>"; };
+		327BB143D1842104DFA045AF /* addbookmark-facebook-icon-off.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "addbookmark-facebook-icon-off.png"; path = "HTBResources.bundle/Images/addbookmark-facebook-icon-off.png"; sourceTree = "<group>"; };
+		3298819F1AF5823DAE881885 /* HTBTagEntry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBTagEntry.h; path = Public/HatenaBookmarkSDK/HTBTagEntry.h; sourceTree = "<group>"; };
+		32C4CCF00CC44AA0D530EE85 /* HTBBookmarkEntryView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBBookmarkEntryView.h; path = Private/HatenaBookmarkSDK/HTBBookmarkEntryView.h; sourceTree = "<group>"; };
+		332428F313B7D53D416176A1 /* keyboard-icon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "keyboard-icon@2x.png"; path = "HTBResources.bundle/Images/keyboard-icon@2x.png"; sourceTree = "<group>"; };
+		3413E5B5667812058143FC0A /* HatenaAFImageRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HatenaAFImageRequestOperation.h; path = Public/HatenaBookmarkSDK/HatenaAFImageRequestOperation.h; sourceTree = "<group>"; };
+		34AD4F5BE267815C07741432 /* gre.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = gre.lproj; path = NSDateTimeAgo.bundle/gre.lproj; sourceTree = "<group>"; };
+		35BACB84E902466BB230A65F /* pl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = pl.lproj; path = NSDateTimeAgo.bundle/pl.lproj; sourceTree = "<group>"; };
+		3869476701462A57FB7AE3A9 /* addbookmark-evernote-icon-off@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "addbookmark-evernote-icon-off@2x.png"; path = "HTBResources.bundle/Images/addbookmark-evernote-icon-off@2x.png"; sourceTree = "<group>"; };
+		39ACF2288068DB7740BC6316 /* eu.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = eu.lproj; sourceTree = "<group>"; };
+		39FBE1C3B6C1F97FC2E0E6AA /* AFSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = Private/AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
+		3BB8CA7EABC7E5048F55EDFD /* header-button-push@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "header-button-push@2x.png"; path = "HTBResources.bundle/Images/header-button-push@2x.png"; sourceTree = "<group>"; };
+		3BC28BC85E0818F75817EE5D /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "Public/AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
+		3D19CA3C01D4ACD382C923D9 /* fr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = fr.lproj; path = NSDateTimeAgo.bundle/fr.lproj; sourceTree = "<group>"; };
+		3D59C96D8CD6FA14DE4D36CC /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "Public/AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
+		3F873E327D49975A9CEF0B35 /* addbookmark-mixi-icon-off@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "addbookmark-mixi-icon-off@2x.png"; path = "HTBResources.bundle/Images/addbookmark-mixi-icon-off@2x.png"; sourceTree = "<group>"; };
+		3F8C24B013D7403538219399 /* addbookmark-twitter-icon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "addbookmark-twitter-icon@2x.png"; path = "HTBResources.bundle/Images/addbookmark-twitter-icon@2x.png"; sourceTree = "<group>"; };
+		4022DE2599E8C86027A45985 /* zh_CN.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = zh_CN.lproj; sourceTree = "<group>"; };
+		41ECBD5462FC1FA6C399A53B /* ____Pods-PocketAPI-prefix.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "____Pods-PocketAPI-prefix.h"; path = "Public/____Pods-PocketAPI-prefix.h"; sourceTree = "<group>"; };
+		432C520C7AE00EF900E6E3D5 /* HTBTagTokenizer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBTagTokenizer.h; path = Public/HatenaBookmarkSDK/HTBTagTokenizer.h; sourceTree = "<group>"; };
+		434F98F5CFF5D83A102DB0ED /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "Public/AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
+		440D50BCE12523CCCB3D0EBF /* back-button-landscape@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "back-button-landscape@2x.png"; path = "HTBResources.bundle/Images/back-button-landscape@2x.png"; sourceTree = "<group>"; };
+		45B6D355B00458053F1A6433 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = Public/AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		465543B7DAD3FAD5C21C659A /* HTBTagTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBTagTextField.h; path = Private/HatenaBookmarkSDK/HTBTagTextField.h; sourceTree = "<group>"; };
+		465B3C82FAF49BAD0AA3F1BE /* tag@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "tag@2x.png"; path = "HTBResources.bundle/Images/tag@2x.png"; sourceTree = "<group>"; };
+		47519396CBF03D17EECE7DEE /* HTBUserManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBUserManager.h; path = Private/HatenaBookmarkSDK/HTBUserManager.h; sourceTree = "<group>"; };
+		47C54D65887C078D5C1B07CC /* Safari.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = Safari.png; sourceTree = "<group>"; };
+		48F9654FCFAE45E37F5A341D /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SFHFKeychainUtils.h; path = Private/SFHFKeychainUtils/SFHFKeychainUtils.h; sourceTree = "<group>"; };
+		495A5A76A75C0E5809BBA6B9 /* back-button-landscape.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "back-button-landscape.png"; path = "HTBResources.bundle/Images/back-button-landscape.png"; sourceTree = "<group>"; };
+		49783B68DF62737A16756C51 /* HTBHatenaBookmarkAPIClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBHatenaBookmarkAPIClient.h; path = Private/HatenaBookmarkSDK/HTBHatenaBookmarkAPIClient.h; sourceTree = "<group>"; };
+		4A1615996BD47DDEECDA9381 /* ar.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = ar.lproj; path = NSDateTimeAgo.bundle/ar.lproj; sourceTree = "<group>"; };
+		4A66EED8663E5B9551AB8F65 /* HTBTagEntry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBTagEntry.h; path = Private/HatenaBookmarkSDK/HTBTagEntry.h; sourceTree = "<group>"; };
+		4B6843E7371376821313F8D5 /* nl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = nl.lproj; path = NSDateTimeAgo.bundle/nl.lproj; sourceTree = "<group>"; };
+		4C48B6CED69C37334A6E3DD6 /* ____Pods-TTTAttributedLabel-prefix.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "____Pods-TTTAttributedLabel-prefix.h"; path = "Public/____Pods-TTTAttributedLabel-prefix.h"; sourceTree = "<group>"; };
+		4CD0FAC55D7DD8EEF803BDEF /* addbookmark-twitter-icon.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "addbookmark-twitter-icon.png"; path = "HTBResources.bundle/Images/addbookmark-twitter-icon.png"; sourceTree = "<group>"; };
+		4E89D15DBADA18612367C95F /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
+		4F7B9BC8F3C96BECD5CBF254 /* addbookmark-evernote-icon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "addbookmark-evernote-icon@2x.png"; path = "HTBResources.bundle/Images/addbookmark-evernote-icon@2x.png"; sourceTree = "<group>"; };
+		4FB61C744D0048AFC7151938 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = Private/AFNetworking/AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		50A847493B1F9AE1E2832658 /* PocketAPILogin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PocketAPILogin.h; path = Public/PocketAPI/PocketAPILogin.h; sourceTree = "<group>"; };
+		51FE21B458F0FDACCB4F619C /* HTBBookmarkEntry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBBookmarkEntry.h; path = Private/HatenaBookmarkSDK/HTBBookmarkEntry.h; sourceTree = "<group>"; };
+		541215CC3017519284315915 /* HTBBookmarkedDataEntry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBBookmarkedDataEntry.h; path = Public/HatenaBookmarkSDK/HTBBookmarkedDataEntry.h; sourceTree = "<group>"; };
+		5441F14997F10B7564FB1792 /* Default-568h@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		563330D2AAFD8EC09A330841 /* pt.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = pt.lproj; path = NSDateTimeAgo.bundle/pt.lproj; sourceTree = "<group>"; };
+		56750971DA604A531A358721 /* ro.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = ro.lproj; path = NSDateTimeAgo.bundle/ro.lproj; sourceTree = "<group>"; };
+		58F1600928BB684F038F0958 /* keyboard@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "keyboard@2x.png"; path = "HTBResources.bundle/Images7/keyboard@2x.png"; sourceTree = "<group>"; };
+		59759C766EE92CFE4C61D3DC /* addbookmark-evernote-icon.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "addbookmark-evernote-icon.png"; path = "HTBResources.bundle/Images/addbookmark-evernote-icon.png"; sourceTree = "<group>"; };
+		5BC39C6A95872F28591B3913 /* HatenaAFHTTPRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HatenaAFHTTPRequestOperation.h; path = Public/HatenaBookmarkSDK/HatenaAFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		5E54B04C75F792A0B80AD4E2 /* es.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = es.lproj; sourceTree = "<group>"; };
+		6222CB3340217F9A3A5F5097 /* ru.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = ru.lproj; sourceTree = "<group>"; };
+		6283170B09242E7100CECC8D /* keyboard-button-highlighted@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "keyboard-button-highlighted@2x.png"; path = "HTBResources.bundle/Images7/keyboard-button-highlighted@2x.png"; sourceTree = "<group>"; };
+		65F5041FBB224074C855DEBC /* ____Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "____Pods-environment.h"; path = "Public/____Pods-environment.h"; sourceTree = "<group>"; };
+		66D88C1FB54D0356C107670E /* HTBNavigationBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBNavigationBar.h; path = Public/HatenaBookmarkSDK/HTBNavigationBar.h; sourceTree = "<group>"; };
+		673A47BF420890D1B41C7CE9 /* HTBLoginWebViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBLoginWebViewController.h; path = Private/HatenaBookmarkSDK/HTBLoginWebViewController.h; sourceTree = "<group>"; };
+		6740F59D9D45AFE344E57C15 /* ko.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = ko.lproj; path = NSDateTimeAgo.bundle/ko.lproj; sourceTree = "<group>"; };
+		6770761816746AE5A8ADCD07 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperationManager.h; path = Private/AFNetworking/AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		67FA3F4F0D76620F2B1DF979 /* PocketAPITypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PocketAPITypes.h; path = Private/PocketAPI/PocketAPITypes.h; sourceTree = "<group>"; };
+		68018E8DC6811160B3123564 /* disclosure-indicator-highlighted.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "disclosure-indicator-highlighted.png"; path = "HTBResources.bundle/Images/disclosure-indicator-highlighted.png"; sourceTree = "<group>"; };
+		6A4849B68EDAB42C0C975393 /* HTBNavigationBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBNavigationBar.h; path = Private/HatenaBookmarkSDK/HTBNavigationBar.h; sourceTree = "<group>"; };
+		6B3789F601B9CDCC22BC4688 /* HTBHatenaBookmarkAPIClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBHatenaBookmarkAPIClient.h; path = Public/HatenaBookmarkSDK/HTBHatenaBookmarkAPIClient.h; sourceTree = "<group>"; };
+		6BF257A8B762F033FF00A857 /* UIAlertView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+AFNetworking.h"; path = "Private/AFNetworking/UIAlertView+AFNetworking.h"; sourceTree = "<group>"; };
+		6CE565801F874C9130DB6DB6 /* tr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = tr.lproj; path = NSDateTimeAgo.bundle/tr.lproj; sourceTree = "<group>"; };
+		6D17ECAC09E022867F451197 /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "Private/AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
+		6E0DC7FB880134ABFE32B11F /* addbookmark-evernote-icon-off.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "addbookmark-evernote-icon-off.png"; path = "HTBResources.bundle/Images/addbookmark-evernote-icon-off.png"; sourceTree = "<group>"; };
+		6EB52F7F9B7A580EE10949AD /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = Public/AFNetworking/AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		70DAC83F1AC6FF9800E1FFBD /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "resources/Launch Screen.xib"; sourceTree = "<group>"; };
+		72567017EDBB8E10D44D29EB /* AFSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = Public/AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
+		72CC83BB39421900F6C3FBEF /* it.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = it.lproj; sourceTree = "<group>"; };
+		735E3F5910C22CBE34B36F15 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "Private/AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
+		73800813165A0C3C514F850D /* uiactivity-bookmark-icon.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "uiactivity-bookmark-icon.png"; path = "HTBResources.bundle/Images/uiactivity-bookmark-icon.png"; sourceTree = "<group>"; };
+		741B693E2098545A9779EBB6 /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = Public/AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
+		787173E0D415805BE6599B67 /* keyboard-selected-button.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "keyboard-selected-button.png"; path = "HTBResources.bundle/Images/keyboard-selected-button.png"; sourceTree = "<group>"; };
+		78EB6121FEA4D4CB017D1D9E /* keyboard-button@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "keyboard-button@2x.png"; path = "HTBResources.bundle/Images/keyboard-button@2x.png"; sourceTree = "<group>"; };
+		7AA558A87ED9BBE008B7F7C0 /* keyboard-button-highlighted.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "keyboard-button-highlighted.png"; path = "HTBResources.bundle/Images7/keyboard-button-highlighted.png"; sourceTree = "<group>"; };
+		7B73554363945FEE14AD3E48 /* addbookmark-mail-icon-off.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "addbookmark-mail-icon-off.png"; path = "HTBResources.bundle/Images/addbookmark-mail-icon-off.png"; sourceTree = "<group>"; };
+		7BFF46509F203D6088A31FC6 /* HTBMyTagsEntry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBMyTagsEntry.h; path = Private/HatenaBookmarkSDK/HTBMyTagsEntry.h; sourceTree = "<group>"; };
+		7C1A5AE60C4AFC6B2831E4D6 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "Private/AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		7C1D43E3ADDF7BB2441ECAE9 /* HTBMacro.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBMacro.h; path = Public/HatenaBookmarkSDK/HTBMacro.h; sourceTree = "<group>"; };
+		7D62B356096BE2ECFB96F008 /* keyboard.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = keyboard.png; path = HTBResources.bundle/Images/keyboard.png; sourceTree = "<group>"; };
+		7E37DBCAE358C42725BA8815 /* HTBAFOAuth1Client.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBAFOAuth1Client.h; path = Private/HatenaBookmarkSDK/HTBAFOAuth1Client.h; sourceTree = "<group>"; };
+		7F2EE4B1C18DC1FC5A1F7AAE /* addbookmark-public-icon.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "addbookmark-public-icon.png"; path = "HTBResources.bundle/Images/addbookmark-public-icon.png"; sourceTree = "<group>"; };
+		81AABE6640A0E4C9EBFD4DD6 /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SFHFKeychainUtils.h; path = Public/SFHFKeychainUtils/SFHFKeychainUtils.h; sourceTree = "<group>"; };
+		82B6A7663673606806750C61 /* HTBCommentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBCommentViewController.h; path = Public/HatenaBookmarkSDK/HTBCommentViewController.h; sourceTree = "<group>"; };
+		832AD77B7473BC73FEB6C830 /* ja.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = ja.lproj; path = HTBResources.bundle/ja.lproj; sourceTree = "<group>"; };
+		84DFC50FA474564B3B7CAC12 /* pt.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = pt.lproj; sourceTree = "<group>"; };
+		86071D2EB3B9486F46708D84 /* HTBBookmarkEntryView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBBookmarkEntryView.h; path = Public/HatenaBookmarkSDK/HTBBookmarkEntryView.h; sourceTree = "<group>"; };
+		861E49D83C8C519211757FD4 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "Public/AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		8701B5174C184B361FA77899 /* HTBPlaceholderTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBPlaceholderTextView.h; path = Private/HatenaBookmarkSDK/HTBPlaceholderTextView.h; sourceTree = "<group>"; };
+		8753C3560A2C026F510FA50C /* HTBCanonicalEntry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBCanonicalEntry.h; path = Private/HatenaBookmarkSDK/HTBCanonicalEntry.h; sourceTree = "<group>"; };
+		8874FDCC558DC8C857B69891 /* HTBHatenaBookmarkActivity.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBHatenaBookmarkActivity.h; path = Public/HatenaBookmarkSDK/HTBHatenaBookmarkActivity.h; sourceTree = "<group>"; };
+		88E114ADF7834CAE1002E14C /* HTBUserManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBUserManager.h; path = Public/HatenaBookmarkSDK/HTBUserManager.h; sourceTree = "<group>"; };
+		898EA0E9771CF4357661528A /* addbookmark-private-icon.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "addbookmark-private-icon.png"; path = "HTBResources.bundle/Images/addbookmark-private-icon.png"; sourceTree = "<group>"; };
+		8A3DE54C6453CA8FCA3B0121 /* HTBTagToolbarView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBTagToolbarView.h; path = Public/HatenaBookmarkSDK/HTBTagToolbarView.h; sourceTree = "<group>"; };
+		8A59BE366D9670ECFB612641 /* HTBMyEntry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBMyEntry.h; path = Private/HatenaBookmarkSDK/HTBMyEntry.h; sourceTree = "<group>"; };
+		8A78EED9A17A21AA5F319016 /* keyboard-icon.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "keyboard-icon.png"; path = "HTBResources.bundle/Images/keyboard-icon.png"; sourceTree = "<group>"; };
+		8B0035270D93ED7DB2EB0A88 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = Public/AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		8C139F7786F158703B8656D3 /* keyboard-selected-button.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "keyboard-selected-button.png"; path = "HTBResources.bundle/Images7/keyboard-selected-button.png"; sourceTree = "<group>"; };
+		8D80BE1D8C26F82228A49AFB /* back-button_on.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "back-button_on.png"; path = "HTBResources.bundle/Images/back-button_on.png"; sourceTree = "<group>"; };
+		8FC3130A5257E3B74B0689B8 /* addbookmark-mail-icon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "addbookmark-mail-icon@2x.png"; path = "HTBResources.bundle/Images/addbookmark-mail-icon@2x.png"; sourceTree = "<group>"; };
+		8FE676DD66F29A60436F632F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		9124123EB1B0577540E75014 /* HTBBookmarkRootView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBBookmarkRootView.h; path = Public/HatenaBookmarkSDK/HTBBookmarkRootView.h; sourceTree = "<group>"; };
+		91D7FDF676A70CE059444798 /* border-dotted.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "border-dotted.png"; path = "HTBResources.bundle/Images/border-dotted.png"; sourceTree = "<group>"; };
+		930AC5666C080FCEC7310669 /* addbookmark-mail-icon.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "addbookmark-mail-icon.png"; path = "HTBResources.bundle/Images/addbookmark-mail-icon.png"; sourceTree = "<group>"; };
+		938611577D4800668CD33706 /* back-button@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "back-button@2x.png"; path = "HTBResources.bundle/Images/back-button@2x.png"; sourceTree = "<group>"; };
+		955933FFFDD00D1665371A4B /* HTBUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBUtility.h; path = Private/HatenaBookmarkSDK/HTBUtility.h; sourceTree = "<group>"; };
+		96E7F8B5A85B1C5169970E83 /* HTBBookmarkToolbarView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBBookmarkToolbarView.h; path = Private/HatenaBookmarkSDK/HTBBookmarkToolbarView.h; sourceTree = "<group>"; };
+		97F741AF192579E21BCCABBA /* HTBCanonicalView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBCanonicalView.h; path = Public/HatenaBookmarkSDK/HTBCanonicalView.h; sourceTree = "<group>"; };
+		97F934503E4BD693795C23C4 /* disclosure-indicator.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "disclosure-indicator.png"; path = "HTBResources.bundle/Images/disclosure-indicator.png"; sourceTree = "<group>"; };
+		9870A0B9F520F55287172556 /* keyboard-selected-button@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "keyboard-selected-button@2x.png"; path = "HTBResources.bundle/Images/keyboard-selected-button@2x.png"; sourceTree = "<group>"; };
+		9BF48B369F08A1A5DB5936CF /* PocketAPIOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PocketAPIOperation.h; path = Private/PocketAPI/PocketAPIOperation.h; sourceTree = "<group>"; };
+		9DD77374FBB4EACDE2C82157 /* addbookmark-mixi-icon-off.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "addbookmark-mixi-icon-off.png"; path = "HTBResources.bundle/Images/addbookmark-mixi-icon-off.png"; sourceTree = "<group>"; };
+		A01F5460A47E2E7D51F263F2 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = Private/AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		A0B90636BBCF6FEA3F25EEFC /* UIAlertView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+AFNetworking.h"; path = "Public/AFNetworking/UIAlertView+AFNetworking.h"; sourceTree = "<group>"; };
+		A22105DF2147939BB6DF6482 /* back-button-push-landscape@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "back-button-push-landscape@2x.png"; path = "HTBResources.bundle/Images/back-button-push-landscape@2x.png"; sourceTree = "<group>"; };
+		A2ED2534C64A0BFA9D6A2643 /* HTBToggleButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBToggleButton.h; path = Private/HatenaBookmarkSDK/HTBToggleButton.h; sourceTree = "<group>"; };
+		A387187E50ECC8BEBB9ECDA2 /* HTBMyEntry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBMyEntry.h; path = Public/HatenaBookmarkSDK/HTBMyEntry.h; sourceTree = "<group>"; };
+		A3C4913E162159C2A0139545 /* es.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = es.lproj; path = NSDateTimeAgo.bundle/es.lproj; sourceTree = "<group>"; };
+		A3CE416D7CF3D71985068C83 /* vi.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = vi.lproj; sourceTree = "<group>"; };
+		A3D6E5E7F924F172799263F2 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = Private/AFNetworking/AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		A5A2D2135E2060C671422DB7 /* header-button@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "header-button@2x.png"; path = "HTBResources.bundle/Images/header-button@2x.png"; sourceTree = "<group>"; };
+		A5CBF7A9F055C08807A9D554 /* PocketAPI+NSOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PocketAPI+NSOperation.h"; path = "Public/PocketAPI/PocketAPI+NSOperation.h"; sourceTree = "<group>"; };
+		A6254ACA503A1DA3824075BC /* header-button-push-landscape.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "header-button-push-landscape.png"; path = "HTBResources.bundle/Images/header-button-push-landscape.png"; sourceTree = "<group>"; };
+		A6668BEF131CF5F51EB427A3 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = Private/AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		A67EF45A77089D7BB66A3CE3 /* addbookmark-public-icon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "addbookmark-public-icon@2x.png"; path = "HTBResources.bundle/Images/addbookmark-public-icon@2x.png"; sourceTree = "<group>"; };
+		A6E6DD296953946202186C91 /* HatenaAFJSONRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HatenaAFJSONRequestOperation.h; path = Private/HatenaBookmarkSDK/HatenaAFJSONRequestOperation.h; sourceTree = "<group>"; };
+		A843F412852F9EAA83CCF545 /* ____Pods-AFNetworking-prefix.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "____Pods-AFNetworking-prefix.h"; path = "Public/____Pods-AFNetworking-prefix.h"; sourceTree = "<group>"; };
+		A8E37AFC523843464DD71AB0 /* HTBHatenaBookmarkManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBHatenaBookmarkManager.h; path = Public/HatenaBookmarkSDK/HTBHatenaBookmarkManager.h; sourceTree = "<group>"; };
+		A9FD7E4D9086AABE9B4DBDBC /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLConnectionOperation.h; path = Private/AFNetworking/AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		AAAB9C5993E77453C9F4056A /* bg.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = bg.lproj; path = NSDateTimeAgo.bundle/bg.lproj; sourceTree = "<group>"; };
+		AB68D9F81A8B78641FC77E25 /* th.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = th.lproj; path = NSDateTimeAgo.bundle/th.lproj; sourceTree = "<group>"; };
+		AB7EFCB52F588C251E3527AD /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = Public/AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		ACADEC2E10193A83472653F4 /* HatenaAFJSONRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HatenaAFJSONRequestOperation.h; path = Public/HatenaBookmarkSDK/HatenaAFJSONRequestOperation.h; sourceTree = "<group>"; };
+		AD95AEA023B9B45129C4DC5A /* no_favicon.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = no_favicon.png; sourceTree = "<group>"; };
+		AF8E11C85CF07594C53B217D /* sk.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = sk.lproj; sourceTree = "<group>"; };
+		B17417FBC3CAE8304EDEB7E0 /* nb.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = nb.lproj; path = NSDateTimeAgo.bundle/nb.lproj; sourceTree = "<group>"; };
+		B17A3F5A0F3D034A7BA38862 /* addbookmark-twitter-icon-off@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "addbookmark-twitter-icon-off@2x.png"; path = "HTBResources.bundle/Images/addbookmark-twitter-icon-off@2x.png"; sourceTree = "<group>"; };
+		B279AD5EFF698103F465AB57 /* HTBTagToolbarView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBTagToolbarView.h; path = Private/HatenaBookmarkSDK/HTBTagToolbarView.h; sourceTree = "<group>"; };
+		B344B9830A234FF64FD002A4 /* HatenaAFPropertyListRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HatenaAFPropertyListRequestOperation.h; path = Private/HatenaBookmarkSDK/HatenaAFPropertyListRequestOperation.h; sourceTree = "<group>"; };
+		B42473C598A71F33EC7E94D4 /* UIImageView+HatenaAFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+HatenaAFNetworking.h"; path = "Public/HatenaBookmarkSDK/UIImageView+HatenaAFNetworking.h"; sourceTree = "<group>"; };
+		B5EFF032064BCEC2407D74D0 /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = Public/AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
+		B6AAD58CBD033D31DBAB7518 /* it.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = it.lproj; path = NSDateTimeAgo.bundle/it.lproj; sourceTree = "<group>"; };
+		B750D88D4396DE2FE96F1EB8 /* HTBBookmarkViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBBookmarkViewController.h; path = Private/HatenaBookmarkSDK/HTBBookmarkViewController.h; sourceTree = "<group>"; };
+		B796FC1986FC0461F4B011AF /* disclosure-indicator@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "disclosure-indicator@2x.png"; path = "HTBResources.bundle/Images/disclosure-indicator@2x.png"; sourceTree = "<group>"; };
+		B8B3EA38C564032AF51008F1 /* fi.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = fi.lproj; sourceTree = "<group>"; };
+		B8CAB4C7AF8C13E9AA1C1B27 /* PocketAPI+NSOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PocketAPI+NSOperation.h"; path = "Private/PocketAPI/PocketAPI+NSOperation.h"; sourceTree = "<group>"; };
+		B95E55562EAA97DCE3574C61 /* sv.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = sv.lproj; sourceTree = "<group>"; };
+		B980A3D3930D55E9825A9CCA /* ru.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = ru.lproj; path = NSDateTimeAgo.bundle/ru.lproj; sourceTree = "<group>"; };
+		BBD0AB1841BEFCDA7084862C /* he.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = he.lproj; path = NSDateTimeAgo.bundle/he.lproj; sourceTree = "<group>"; };
+		BC90E8D0C025B321FD43589D /* HatenaAFHTTPClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HatenaAFHTTPClient.h; path = Public/HatenaBookmarkSDK/HatenaAFHTTPClient.h; sourceTree = "<group>"; };
+		BDF889F2599F4EAB34F285C9 /* HatenaAFXMLRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HatenaAFXMLRequestOperation.h; path = Private/HatenaBookmarkSDK/HatenaAFXMLRequestOperation.h; sourceTree = "<group>"; };
+		BFE94D1DC646AC234AF4C9BC /* HTBAuthorizeEntry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBAuthorizeEntry.h; path = Public/HatenaBookmarkSDK/HTBAuthorizeEntry.h; sourceTree = "<group>"; };
+		C0FA3CC50DA03D47E658DAF2 /* TTTAttributedLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TTTAttributedLabel.h; path = Public/TTTAttributedLabel/TTTAttributedLabel.h; sourceTree = "<group>"; };
+		C1F2E8454C01F837ECB937D5 /* addbookmark-mixi-icon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "addbookmark-mixi-icon@2x.png"; path = "HTBResources.bundle/Images/addbookmark-mixi-icon@2x.png"; sourceTree = "<group>"; };
+		C218E8909229C4209C47BFCE /* HTBBookmarkedDataEntry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBBookmarkedDataEntry.h; path = Private/HatenaBookmarkSDK/HTBBookmarkedDataEntry.h; sourceTree = "<group>"; };
+		C5BDBB96C391E4ECCDCBB331 /* addbookmark-mail-icon-off@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "addbookmark-mail-icon-off@2x.png"; path = "HTBResources.bundle/Images/addbookmark-mail-icon-off@2x.png"; sourceTree = "<group>"; };
+		C8726FF7516393DA0F61FC44 /* header-background.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "header-background.png"; path = "HTBResources.bundle/Images/header-background.png"; sourceTree = "<group>"; };
+		C97EF0407496479E27F40A18 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLConnectionOperation.h; path = Public/AFNetworking/AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		C99AD8CA7F0624D079CD0501 /* PocketAPILogin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PocketAPILogin.h; path = Private/PocketAPI/PocketAPILogin.h; sourceTree = "<group>"; };
+		C9B2BC269E6D1C6118F885EB /* Safari~ipad.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "Safari~ipad.png"; sourceTree = "<group>"; };
+		CA46D7F4FC1CD534598C7041 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = Public/AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		CA504DD1439B2873DCBB2430 /* HTBBookmarkViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBBookmarkViewController.h; path = Public/HatenaBookmarkSDK/HTBBookmarkViewController.h; sourceTree = "<group>"; };
+		CA5273778F4089A18217284C /* Stubs.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Stubs.m; sourceTree = "<group>"; };
+		CC22CF28195D7595ED4FBDCC /* HatenaAFPropertyListRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HatenaAFPropertyListRequestOperation.h; path = Public/HatenaBookmarkSDK/HatenaAFPropertyListRequestOperation.h; sourceTree = "<group>"; };
+		CC29F729974BBF7EC5C6727D /* keyboard-selected-button@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "keyboard-selected-button@2x.png"; path = "HTBResources.bundle/Images7/keyboard-selected-button@2x.png"; sourceTree = "<group>"; };
+		CC67F0AFBCA6974CDB0472CA /* pl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = pl.lproj; sourceTree = "<group>"; };
+		CC7A4ED9D2766F6C2E569B3F /* header-button-landscape.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "header-button-landscape.png"; path = "HTBResources.bundle/Images/header-button-landscape.png"; sourceTree = "<group>"; };
+		CD4FD90CC4F42ED3C5DBFF98 /* de.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = de.lproj; sourceTree = "<group>"; };
+		CF9847DD98013A567F724C93 /* HatenaAFHTTPRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HatenaAFHTTPRequestOperation.h; path = Private/HatenaBookmarkSDK/HatenaAFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		D1A20B49C69927682BC83A9F /* HTBTagTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBTagTextField.h; path = Public/HatenaBookmarkSDK/HTBTagTextField.h; sourceTree = "<group>"; };
+		D1DBA26162348B77D29D2927 /* keyboard-selected-button-highlighted.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "keyboard-selected-button-highlighted.png"; path = "HTBResources.bundle/Images/keyboard-selected-button-highlighted.png"; sourceTree = "<group>"; };
+		D234312863725D278E1302F2 /* ko.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = ko.lproj; sourceTree = "<group>"; };
+		D277246C120EFD03CAF1E744 /* TTTAttributedLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TTTAttributedLabel.h; path = Private/TTTAttributedLabel/TTTAttributedLabel.h; sourceTree = "<group>"; };
+		D3786D5FFA1CD82F47CF3309 /* cs.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = cs.lproj; sourceTree = "<group>"; };
+		D47AD37BE1907D06407F962A /* addbookmark-private-icon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "addbookmark-private-icon@2x.png"; path = "HTBResources.bundle/Images/addbookmark-private-icon@2x.png"; sourceTree = "<group>"; };
+		D6004FB363E206AF1B57D745 /* back-button-push-landscape.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "back-button-push-landscape.png"; path = "HTBResources.bundle/Images/back-button-push-landscape.png"; sourceTree = "<group>"; };
+		D637EA9B1FAF854CA44C4E64 /* libib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D63C27641AAE939BE6B744F8 /* de.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = de.lproj; path = NSDateTimeAgo.bundle/de.lproj; sourceTree = "<group>"; };
+		D64C6F129AAF8E405FFFD60D /* keyboard-selected-button-highlighted.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "keyboard-selected-button-highlighted.png"; path = "HTBResources.bundle/Images7/keyboard-selected-button-highlighted.png"; sourceTree = "<group>"; };
+		D758A5096342CFE84A29F833 /* HTBAuthorizeEntry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBAuthorizeEntry.h; path = Private/HatenaBookmarkSDK/HTBAuthorizeEntry.h; sourceTree = "<group>"; };
+		D7A8ED83688B35B655F56DCC /* keyboard-selected-button-highlighted@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "keyboard-selected-button-highlighted@2x.png"; path = "HTBResources.bundle/Images7/keyboard-selected-button-highlighted@2x.png"; sourceTree = "<group>"; };
+		D7FB7F00768DE4B52538B69C /* PocketAPIKeychainUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PocketAPIKeychainUtils.h; path = Private/PocketAPI/PocketAPIKeychainUtils.h; sourceTree = "<group>"; };
+		D941F00FB712360C423FE8C3 /* HatenaAFXMLRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HatenaAFXMLRequestOperation.h; path = Public/HatenaBookmarkSDK/HatenaAFXMLRequestOperation.h; sourceTree = "<group>"; };
+		D9EA15E86422584DDEABE54B /* disclosure-indicator-highlighted@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "disclosure-indicator-highlighted@2x.png"; path = "HTBResources.bundle/Images/disclosure-indicator-highlighted@2x.png"; sourceTree = "<group>"; };
+		DA16C29440FAAC6F1ED5C4BF /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "Private/AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
+		DB2931566A61660457E8B65C /* HTBHatenaBookmarkActivity.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBHatenaBookmarkActivity.h; path = Private/HatenaBookmarkSDK/HTBHatenaBookmarkActivity.h; sourceTree = "<group>"; };
+		DB71D35DDCA84AA1129DCC3F /* HTBCanonicalEntry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBCanonicalEntry.h; path = Public/HatenaBookmarkSDK/HTBCanonicalEntry.h; sourceTree = "<group>"; };
+		DC96536975956A3EB8E6C14B /* sv.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = sv.lproj; path = NSDateTimeAgo.bundle/sv.lproj; sourceTree = "<group>"; };
+		E0BBCBE20ACBA65E9F39075C /* HatenaAFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HatenaAFNetworking.h; path = Private/HatenaBookmarkSDK/HatenaAFNetworking.h; sourceTree = "<group>"; };
+		E14B5CCEE82D6F2B07E55D29 /* header-button.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "header-button.png"; path = "HTBResources.bundle/Images/header-button.png"; sourceTree = "<group>"; };
+		E16EC63E5EE787195DFE9F05 /* PocketAPIKeychainUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PocketAPIKeychainUtils.h; path = Public/PocketAPI/PocketAPIKeychainUtils.h; sourceTree = "<group>"; };
+		E1EFA152CD0C2C073BF8E101 /* PocketAPIOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PocketAPIOperation.h; path = Public/PocketAPI/PocketAPIOperation.h; sourceTree = "<group>"; };
+		E56452E133FCC14D40B7D354 /* HTBHatenaBookmarkViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBHatenaBookmarkViewController.h; path = Private/HatenaBookmarkSDK/HTBHatenaBookmarkViewController.h; sourceTree = "<group>"; };
+		E602A1A1A6F8C60FB05F520B /* HTBMacro.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBMacro.h; path = Private/HatenaBookmarkSDK/HTBMacro.h; sourceTree = "<group>"; };
+		E7F95D66293AD4B2CEB18E51 /* Safari@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "Safari@2x.png"; sourceTree = "<group>"; };
+		E89C1D4E697793C6137148BF /* PocketAPI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PocketAPI.h; path = Private/PocketAPI/PocketAPI.h; sourceTree = "<group>"; };
+		E8C7D18EFFA8C172C3C00F88 /* uiactivity-bookmark-icon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "uiactivity-bookmark-icon@2x.png"; path = "HTBResources.bundle/Images/uiactivity-bookmark-icon@2x.png"; sourceTree = "<group>"; };
+		E8F135D26C580292462A8CC8 /* header-button-landscape@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "header-button-landscape@2x.png"; path = "HTBResources.bundle/Images/header-button-landscape@2x.png"; sourceTree = "<group>"; };
+		EA42CC1CB7ECBAF1B35E9D20 /* lv.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = lv.lproj; path = NSDateTimeAgo.bundle/lv.lproj; sourceTree = "<group>"; };
+		EA7029F087A192ACB206231E /* HatenaAFURLConnectionOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HatenaAFURLConnectionOperation.h; path = Public/HatenaBookmarkSDK/HatenaAFURLConnectionOperation.h; sourceTree = "<group>"; };
+		ED3062E7FFDAD8ACA9206AE6 /* keyboard-selected-button-highlighted@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "keyboard-selected-button-highlighted@2x.png"; path = "HTBResources.bundle/Images/keyboard-selected-button-highlighted@2x.png"; sourceTree = "<group>"; };
+		F01EEE2EB9A4957E1076FD93 /* Safari@2x~ipad.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "Safari@2x~ipad.png"; sourceTree = "<group>"; };
+		F301B0429931EFD4F4C843E4 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "Private/AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
+		F43566196129CC998D0215FD /* cs.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = cs.lproj; path = NSDateTimeAgo.bundle/cs.lproj; sourceTree = "<group>"; };
+		F451AF8766D7C149A556C243 /* canonical@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "canonical@2x.png"; path = "HTBResources.bundle/Images/canonical@2x.png"; sourceTree = "<group>"; };
+		F4C317832E4465157D00AB1D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		F53ECE7FB61D491AED163A51 /* HTBTagTokenizer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBTagTokenizer.h; path = Private/HatenaBookmarkSDK/HTBTagTokenizer.h; sourceTree = "<group>"; };
+		F56C8B1BA9DF72E7724E380B /* canonical.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = canonical.png; path = HTBResources.bundle/Images/canonical.png; sourceTree = "<group>"; };
+		F64D150B691CC94518BE3092 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "Private/AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
+		F75CA4D9083700088A8ECD68 /* tag.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = tag.png; path = HTBResources.bundle/Images/tag.png; sourceTree = "<group>"; };
+		F854E6F680773EC5B82E74ED /* header-background@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "header-background@2x.png"; path = "HTBResources.bundle/Images/header-background@2x.png"; sourceTree = "<group>"; };
+		F8DF2807F4344243A6A52973 /* HatenaAFURLConnectionOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HatenaAFURLConnectionOperation.h; path = Private/HatenaBookmarkSDK/HatenaAFURLConnectionOperation.h; sourceTree = "<group>"; };
+		F980338867F3900161805685 /* HTBLoginWebViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBLoginWebViewController.h; path = Public/HatenaBookmarkSDK/HTBLoginWebViewController.h; sourceTree = "<group>"; };
+		F9A684CB70A80F1A3319F724 /* HTBAFOAuth1Client.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBAFOAuth1Client.h; path = Public/HatenaBookmarkSDK/HTBAFOAuth1Client.h; sourceTree = "<group>"; };
+		FB4AC6D71A1694BEBE1DBDB8 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = Private/AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		FB68C262D035D0DF0EAC1A71 /* hu.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = hu.lproj; path = NSDateTimeAgo.bundle/hu.lproj; sourceTree = "<group>"; };
+		FB724043C744568A86579532 /* zh_Hant.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = zh_Hant.lproj; path = NSDateTimeAgo.bundle/zh_Hant.lproj; sourceTree = "<group>"; };
+		FCF0580239AE62AF2D648178 /* border-dotted@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "border-dotted@2x.png"; path = "HTBResources.bundle/Images/border-dotted@2x.png"; sourceTree = "<group>"; };
+		FDA6AA6E6850796FE2F08387 /* HTBTagInputView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTBTagInputView.h; path = Private/HatenaBookmarkSDK/HTBTagInputView.h; sourceTree = "<group>"; };
+		FE4E0DBCDCFD9BAF9F368092 /* back-button_on@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "back-button_on@2x.png"; path = "HTBResources.bundle/Images/back-button_on@2x.png"; sourceTree = "<group>"; };
+		FF5D6E4036707379A571EF2A /* keyboard-button-highlighted.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "keyboard-button-highlighted.png"; path = "HTBResources.bundle/Images/keyboard-button-highlighted.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		38FCF0622704C80071C8EA13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC1AAE3125844D50605916A1 /* Foundation.framework in Frameworks */,
+				E29E099AC8FDBC09064C9AB4 /* QuartzCore.framework in Frameworks */,
+				2E00A00DA3E5E0F21DB4145A /* CoreGraphics.framework in Frameworks */,
+				19C8FD9B2708FB6FDFC29C45 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		21F417D2F0A0D3D25598D8F6 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				5441F14997F10B7564FB1792 /* Default-568h@2x.png */,
+				AD95AEA023B9B45129C4DC5A /* no_favicon.png */,
+			);
+			name = resources;
+			path = ./resources;
+			sourceTree = "<group>";
+		};
+		7FB6F39238F3D157DBF9BD4D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A3D6E5E7F924F172799263F2 /* AFHTTPRequestOperation.h */,
+				6770761816746AE5A8ADCD07 /* AFHTTPRequestOperationManager.h */,
+				FB4AC6D71A1694BEBE1DBDB8 /* AFHTTPSessionManager.h */,
+				4FB61C744D0048AFC7151938 /* AFNetworkActivityIndicatorManager.h */,
+				276919AF8D0677227534EA86 /* AFNetworking.h */,
+				1D125443E3F1E178AEF4292C /* AFNetworkReachabilityManager.h */,
+				39FBE1C3B6C1F97FC2E0E6AA /* AFSecurityPolicy.h */,
+				A9FD7E4D9086AABE9B4DBDBC /* AFURLConnectionOperation.h */,
+				A6668BEF131CF5F51EB427A3 /* AFURLRequestSerialization.h */,
+				A01F5460A47E2E7D51F263F2 /* AFURLResponseSerialization.h */,
+				11C779582414B489FF03EE98 /* AFURLSessionManager.h */,
+				F301B0429931EFD4F4C843E4 /* UIActivityIndicatorView+AFNetworking.h */,
+				6BF257A8B762F033FF00A857 /* UIAlertView+AFNetworking.h */,
+				0BC0495E709DD5AAA656B471 /* UIButton+AFNetworking.h */,
+				7C1A5AE60C4AFC6B2831E4D6 /* UIImageView+AFNetworking.h */,
+				6D17ECAC09E022867F451197 /* UIKit+AFNetworking.h */,
+				DA16C29440FAAC6F1ED5C4BF /* UIProgressView+AFNetworking.h */,
+				735E3F5910C22CBE34B36F15 /* UIRefreshControl+AFNetworking.h */,
+				F64D150B691CC94518BE3092 /* UIWebView+AFNetworking.h */,
+				191AB47535D61ADE69A1B160 /* HatenaAFHTTPClient.h */,
+				CF9847DD98013A567F724C93 /* HatenaAFHTTPRequestOperation.h */,
+				2BFEDF5BC6B1195CC7922F47 /* HatenaAFImageRequestOperation.h */,
+				A6E6DD296953946202186C91 /* HatenaAFJSONRequestOperation.h */,
+				13DCB2D64C3F942FF1F29199 /* HatenaAFNetworkActivityIndicatorManager.h */,
+				E0BBCBE20ACBA65E9F39075C /* HatenaAFNetworking.h */,
+				B344B9830A234FF64FD002A4 /* HatenaAFPropertyListRequestOperation.h */,
+				F8DF2807F4344243A6A52973 /* HatenaAFURLConnectionOperation.h */,
+				BDF889F2599F4EAB34F285C9 /* HatenaAFXMLRequestOperation.h */,
+				27EB4E5B5A249BECFF745E2B /* HatenaBookmarkSDK.h */,
+				7E37DBCAE358C42725BA8815 /* HTBAFOAuth1Client.h */,
+				D758A5096342CFE84A29F833 /* HTBAuthorizeEntry.h */,
+				C218E8909229C4209C47BFCE /* HTBBookmarkedDataEntry.h */,
+				51FE21B458F0FDACCB4F619C /* HTBBookmarkEntry.h */,
+				32C4CCF00CC44AA0D530EE85 /* HTBBookmarkEntryView.h */,
+				150D36DD8DD1AF91734B6C7A /* HTBBookmarkRootView.h */,
+				96E7F8B5A85B1C5169970E83 /* HTBBookmarkToolbarView.h */,
+				B750D88D4396DE2FE96F1EB8 /* HTBBookmarkViewController.h */,
+				8753C3560A2C026F510FA50C /* HTBCanonicalEntry.h */,
+				294A74E1A0B7DDCE144EE5CD /* HTBCanonicalView.h */,
+				3204BDB9ADF26F30122B6CA7 /* HTBCommentViewController.h */,
+				DB2931566A61660457E8B65C /* HTBHatenaBookmarkActivity.h */,
+				49783B68DF62737A16756C51 /* HTBHatenaBookmarkAPIClient.h */,
+				0CE1297CCE3B446154E41DED /* HTBHatenaBookmarkManager.h */,
+				E56452E133FCC14D40B7D354 /* HTBHatenaBookmarkViewController.h */,
+				673A47BF420890D1B41C7CE9 /* HTBLoginWebViewController.h */,
+				E602A1A1A6F8C60FB05F520B /* HTBMacro.h */,
+				8A59BE366D9670ECFB612641 /* HTBMyEntry.h */,
+				7BFF46509F203D6088A31FC6 /* HTBMyTagsEntry.h */,
+				6A4849B68EDAB42C0C975393 /* HTBNavigationBar.h */,
+				8701B5174C184B361FA77899 /* HTBPlaceholderTextView.h */,
+				4A66EED8663E5B9551AB8F65 /* HTBTagEntry.h */,
+				FDA6AA6E6850796FE2F08387 /* HTBTagInputView.h */,
+				465543B7DAD3FAD5C21C659A /* HTBTagTextField.h */,
+				F53ECE7FB61D491AED163A51 /* HTBTagTokenizer.h */,
+				B279AD5EFF698103F465AB57 /* HTBTagToolbarView.h */,
+				A2ED2534C64A0BFA9D6A2643 /* HTBToggleButton.h */,
+				47519396CBF03D17EECE7DEE /* HTBUserManager.h */,
+				955933FFFDD00D1665371A4B /* HTBUtility.h */,
+				313267632EF68DCABD55913A /* UIAlertView+HTBNSError.h */,
+				103CAD31CF0B4534379CE3C4 /* UIImageView+HatenaAFNetworking.h */,
+				B8CAB4C7AF8C13E9AA1C1B27 /* PocketAPI+NSOperation.h */,
+				E89C1D4E697793C6137148BF /* PocketAPI.h */,
+				D7FB7F00768DE4B52538B69C /* PocketAPIKeychainUtils.h */,
+				C99AD8CA7F0624D079CD0501 /* PocketAPILogin.h */,
+				9BF48B369F08A1A5DB5936CF /* PocketAPIOperation.h */,
+				67FA3F4F0D76620F2B1DF979 /* PocketAPITypes.h */,
+				48F9654FCFAE45E37F5A341D /* SFHFKeychainUtils.h */,
+				D277246C120EFD03CAF1E744 /* TTTAttributedLabel.h */,
+				A843F412852F9EAA83CCF545 /* ____Pods-AFNetworking-prefix.h */,
+				65F5041FBB224074C855DEBC /* ____Pods-environment.h */,
+				289097A377FDD5389133EA35 /* ____Pods-HatenaBookmarkSDK-prefix.h */,
+				41ECBD5462FC1FA6C399A53B /* ____Pods-PocketAPI-prefix.h */,
+				0FF1CC996144B72FFA62BF6D /* ____Pods-SFHFKeychainUtils-prefix.h */,
+				4C48B6CED69C37334A6E3DD6 /* ____Pods-TTTAttributedLabel-prefix.h */,
+				01E68B6F558DD39A29936E74 /* AFHTTPRequestOperation.h */,
+				18974988BC67A5BDD47ED97A /* AFHTTPRequestOperationManager.h */,
+				CA46D7F4FC1CD534598C7041 /* AFHTTPSessionManager.h */,
+				6EB52F7F9B7A580EE10949AD /* AFNetworkActivityIndicatorManager.h */,
+				741B693E2098545A9779EBB6 /* AFNetworking.h */,
+				AB7EFCB52F588C251E3527AD /* AFNetworkReachabilityManager.h */,
+				72567017EDBB8E10D44D29EB /* AFSecurityPolicy.h */,
+				C97EF0407496479E27F40A18 /* AFURLConnectionOperation.h */,
+				45B6D355B00458053F1A6433 /* AFURLRequestSerialization.h */,
+				8B0035270D93ED7DB2EB0A88 /* AFURLResponseSerialization.h */,
+				B5EFF032064BCEC2407D74D0 /* AFURLSessionManager.h */,
+				434F98F5CFF5D83A102DB0ED /* UIActivityIndicatorView+AFNetworking.h */,
+				A0B90636BBCF6FEA3F25EEFC /* UIAlertView+AFNetworking.h */,
+				118AFE911C9B3CE7349B27B1 /* UIButton+AFNetworking.h */,
+				861E49D83C8C519211757FD4 /* UIImageView+AFNetworking.h */,
+				2EFFDAEB22F0F77505E17F4A /* UIKit+AFNetworking.h */,
+				3D59C96D8CD6FA14DE4D36CC /* UIProgressView+AFNetworking.h */,
+				3BC28BC85E0818F75817EE5D /* UIRefreshControl+AFNetworking.h */,
+				09CC92CD51CEBC2057C576CC /* UIWebView+AFNetworking.h */,
+				BC90E8D0C025B321FD43589D /* HatenaAFHTTPClient.h */,
+				5BC39C6A95872F28591B3913 /* HatenaAFHTTPRequestOperation.h */,
+				3413E5B5667812058143FC0A /* HatenaAFImageRequestOperation.h */,
+				ACADEC2E10193A83472653F4 /* HatenaAFJSONRequestOperation.h */,
+				1422C9EC016C58CEBE718D30 /* HatenaAFNetworkActivityIndicatorManager.h */,
+				1AA03B406B217C8CC98B182A /* HatenaAFNetworking.h */,
+				CC22CF28195D7595ED4FBDCC /* HatenaAFPropertyListRequestOperation.h */,
+				EA7029F087A192ACB206231E /* HatenaAFURLConnectionOperation.h */,
+				D941F00FB712360C423FE8C3 /* HatenaAFXMLRequestOperation.h */,
+				212137E9397020AD959C9F01 /* HatenaBookmarkSDK.h */,
+				F9A684CB70A80F1A3319F724 /* HTBAFOAuth1Client.h */,
+				BFE94D1DC646AC234AF4C9BC /* HTBAuthorizeEntry.h */,
+				541215CC3017519284315915 /* HTBBookmarkedDataEntry.h */,
+				0F69FF36744456533E77A87E /* HTBBookmarkEntry.h */,
+				86071D2EB3B9486F46708D84 /* HTBBookmarkEntryView.h */,
+				9124123EB1B0577540E75014 /* HTBBookmarkRootView.h */,
+				0389BDAB364277E61B49D611 /* HTBBookmarkToolbarView.h */,
+				CA504DD1439B2873DCBB2430 /* HTBBookmarkViewController.h */,
+				DB71D35DDCA84AA1129DCC3F /* HTBCanonicalEntry.h */,
+				97F741AF192579E21BCCABBA /* HTBCanonicalView.h */,
+				82B6A7663673606806750C61 /* HTBCommentViewController.h */,
+				8874FDCC558DC8C857B69891 /* HTBHatenaBookmarkActivity.h */,
+				6B3789F601B9CDCC22BC4688 /* HTBHatenaBookmarkAPIClient.h */,
+				A8E37AFC523843464DD71AB0 /* HTBHatenaBookmarkManager.h */,
+				061C39E77398659633D0B851 /* HTBHatenaBookmarkViewController.h */,
+				F980338867F3900161805685 /* HTBLoginWebViewController.h */,
+				7C1D43E3ADDF7BB2441ECAE9 /* HTBMacro.h */,
+				A387187E50ECC8BEBB9ECDA2 /* HTBMyEntry.h */,
+				0F9704984379BFB21CB595CA /* HTBMyTagsEntry.h */,
+				66D88C1FB54D0356C107670E /* HTBNavigationBar.h */,
+				24310D624BE7F322E8457956 /* HTBPlaceholderTextView.h */,
+				3298819F1AF5823DAE881885 /* HTBTagEntry.h */,
+				208BFB3B87E2A5ED3D3EF1C6 /* HTBTagInputView.h */,
+				D1A20B49C69927682BC83A9F /* HTBTagTextField.h */,
+				432C520C7AE00EF900E6E3D5 /* HTBTagTokenizer.h */,
+				8A3DE54C6453CA8FCA3B0121 /* HTBTagToolbarView.h */,
+				03D6EBA946E8BE84C07D506D /* HTBToggleButton.h */,
+				88E114ADF7834CAE1002E14C /* HTBUserManager.h */,
+				06C37465A8A1EDC5CA776B03 /* HTBUtility.h */,
+				2F3745A8C574BCC8A0C9B310 /* UIAlertView+HTBNSError.h */,
+				B42473C598A71F33EC7E94D4 /* UIImageView+HatenaAFNetworking.h */,
+				A5CBF7A9F055C08807A9D554 /* PocketAPI+NSOperation.h */,
+				2C79F0AD9CC998CFC9C7D3B1 /* PocketAPI.h */,
+				E16EC63E5EE787195DFE9F05 /* PocketAPIKeychainUtils.h */,
+				50A847493B1F9AE1E2832658 /* PocketAPILogin.h */,
+				E1EFA152CD0C2C073BF8E101 /* PocketAPIOperation.h */,
+				015B84CED09BF53060B89785 /* PocketAPITypes.h */,
+				81AABE6640A0E4C9EBFD4DD6 /* SFHFKeychainUtils.h */,
+				C0FA3CC50DA03D47E658DAF2 /* TTTAttributedLabel.h */,
+			);
+			name = Pods;
+			path = /Users/Yusuke/src/github.com/ysk1031/Pokebu/vendor/Pods/Headers;
+			sourceTree = "<group>";
+		};
+		826E6BEF70FF68625A1453AB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				21F417D2F0A0D3D25598D8F6 /* resources */,
+				862FD5E723BB47B5F0E1B431 /* Resources */,
+				70DAC83F1AC6FF9800E1FFBD /* Launch Screen.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		862FD5E723BB47B5F0E1B431 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6E0DC7FB880134ABFE32B11F /* addbookmark-evernote-icon-off.png */,
+				3869476701462A57FB7AE3A9 /* addbookmark-evernote-icon-off@2x.png */,
+				59759C766EE92CFE4C61D3DC /* addbookmark-evernote-icon.png */,
+				4F7B9BC8F3C96BECD5CBF254 /* addbookmark-evernote-icon@2x.png */,
+				327BB143D1842104DFA045AF /* addbookmark-facebook-icon-off.png */,
+				135455427BE51CE1D7BCE1BA /* addbookmark-facebook-icon-off@2x.png */,
+				07951C4C06F1A041A2F84C51 /* addbookmark-facebook-icon.png */,
+				087379B579ED718AB3F01B61 /* addbookmark-facebook-icon@2x.png */,
+				7B73554363945FEE14AD3E48 /* addbookmark-mail-icon-off.png */,
+				C5BDBB96C391E4ECCDCBB331 /* addbookmark-mail-icon-off@2x.png */,
+				930AC5666C080FCEC7310669 /* addbookmark-mail-icon.png */,
+				8FC3130A5257E3B74B0689B8 /* addbookmark-mail-icon@2x.png */,
+				9DD77374FBB4EACDE2C82157 /* addbookmark-mixi-icon-off.png */,
+				3F873E327D49975A9CEF0B35 /* addbookmark-mixi-icon-off@2x.png */,
+				2B73D618DA8D85DAA67AB9CA /* addbookmark-mixi-icon.png */,
+				C1F2E8454C01F837ECB937D5 /* addbookmark-mixi-icon@2x.png */,
+				898EA0E9771CF4357661528A /* addbookmark-private-icon.png */,
+				D47AD37BE1907D06407F962A /* addbookmark-private-icon@2x.png */,
+				7F2EE4B1C18DC1FC5A1F7AAE /* addbookmark-public-icon.png */,
+				A67EF45A77089D7BB66A3CE3 /* addbookmark-public-icon@2x.png */,
+				215B2301593BA3161A6C6C38 /* addbookmark-twitter-icon-off.png */,
+				B17A3F5A0F3D034A7BA38862 /* addbookmark-twitter-icon-off@2x.png */,
+				4CD0FAC55D7DD8EEF803BDEF /* addbookmark-twitter-icon.png */,
+				3F8C24B013D7403538219399 /* addbookmark-twitter-icon@2x.png */,
+				495A5A76A75C0E5809BBA6B9 /* back-button-landscape.png */,
+				440D50BCE12523CCCB3D0EBF /* back-button-landscape@2x.png */,
+				D6004FB363E206AF1B57D745 /* back-button-push-landscape.png */,
+				A22105DF2147939BB6DF6482 /* back-button-push-landscape@2x.png */,
+				2797FE2BC7C2F97DEC729D20 /* back-button.png */,
+				938611577D4800668CD33706 /* back-button@2x.png */,
+				8D80BE1D8C26F82228A49AFB /* back-button_on.png */,
+				FE4E0DBCDCFD9BAF9F368092 /* back-button_on@2x.png */,
+				91D7FDF676A70CE059444798 /* border-dotted.png */,
+				FCF0580239AE62AF2D648178 /* border-dotted@2x.png */,
+				F56C8B1BA9DF72E7724E380B /* canonical.png */,
+				F451AF8766D7C149A556C243 /* canonical@2x.png */,
+				68018E8DC6811160B3123564 /* disclosure-indicator-highlighted.png */,
+				D9EA15E86422584DDEABE54B /* disclosure-indicator-highlighted@2x.png */,
+				97F934503E4BD693795C23C4 /* disclosure-indicator.png */,
+				B796FC1986FC0461F4B011AF /* disclosure-indicator@2x.png */,
+				C8726FF7516393DA0F61FC44 /* header-background.png */,
+				F854E6F680773EC5B82E74ED /* header-background@2x.png */,
+				CC7A4ED9D2766F6C2E569B3F /* header-button-landscape.png */,
+				E8F135D26C580292462A8CC8 /* header-button-landscape@2x.png */,
+				A6254ACA503A1DA3824075BC /* header-button-push-landscape.png */,
+				18A2475EB480573C5948200B /* header-button-push-landscape@2x.png */,
+				1C97F6CBED4D30721BFE58F8 /* header-button-push.png */,
+				3BB8CA7EABC7E5048F55EDFD /* header-button-push@2x.png */,
+				E14B5CCEE82D6F2B07E55D29 /* header-button.png */,
+				A5A2D2135E2060C671422DB7 /* header-button@2x.png */,
+				FF5D6E4036707379A571EF2A /* keyboard-button-highlighted.png */,
+				1DC7EEC5910336223625B814 /* keyboard-button-highlighted@2x.png */,
+				0A11D970B52E79BC835E994E /* keyboard-button.png */,
+				78EB6121FEA4D4CB017D1D9E /* keyboard-button@2x.png */,
+				8A78EED9A17A21AA5F319016 /* keyboard-icon.png */,
+				332428F313B7D53D416176A1 /* keyboard-icon@2x.png */,
+				D1DBA26162348B77D29D2927 /* keyboard-selected-button-highlighted.png */,
+				ED3062E7FFDAD8ACA9206AE6 /* keyboard-selected-button-highlighted@2x.png */,
+				787173E0D415805BE6599B67 /* keyboard-selected-button.png */,
+				9870A0B9F520F55287172556 /* keyboard-selected-button@2x.png */,
+				7D62B356096BE2ECFB96F008 /* keyboard.png */,
+				2CCF21B6AF3EDB019E3144AA /* keyboard@2x.png */,
+				F75CA4D9083700088A8ECD68 /* tag.png */,
+				465B3C82FAF49BAD0AA3F1BE /* tag@2x.png */,
+				73800813165A0C3C514F850D /* uiactivity-bookmark-icon.png */,
+				E8C7D18EFFA8C172C3C00F88 /* uiactivity-bookmark-icon@2x.png */,
+				7AA558A87ED9BBE008B7F7C0 /* keyboard-button-highlighted.png */,
+				6283170B09242E7100CECC8D /* keyboard-button-highlighted@2x.png */,
+				04FA88E7BF0D387CDCF32C6F /* keyboard-button.png */,
+				14889F1BFBDF5B2D95839F7E /* keyboard-button@2x.png */,
+				D64C6F129AAF8E405FFFD60D /* keyboard-selected-button-highlighted.png */,
+				D7A8ED83688B35B655F56DCC /* keyboard-selected-button-highlighted@2x.png */,
+				8C139F7786F158703B8656D3 /* keyboard-selected-button.png */,
+				CC29F729974BBF7EC5C6727D /* keyboard-selected-button@2x.png */,
+				26CF87FF5A494FE1B13E0D9A /* keyboard.png */,
+				58F1600928BB684F038F0958 /* keyboard@2x.png */,
+				47C54D65887C078D5C1B07CC /* Safari.png */,
+				E7F95D66293AD4B2CEB18E51 /* Safari@2x.png */,
+				F01EEE2EB9A4957E1076FD93 /* Safari@2x~ipad.png */,
+				C9B2BC269E6D1C6118F885EB /* Safari~ipad.png */,
+				D3786D5FFA1CD82F47CF3309 /* cs.lproj */,
+				CD4FD90CC4F42ED3C5DBFF98 /* de.lproj */,
+				4E89D15DBADA18612367C95F /* en.lproj */,
+				5E54B04C75F792A0B80AD4E2 /* es.lproj */,
+				39ACF2288068DB7740BC6316 /* eu.lproj */,
+				B8B3EA38C564032AF51008F1 /* fi.lproj */,
+				16F21F3E5666E6BBF0691709 /* fr.lproj */,
+				1F87A8F4906A1BB2A5C64B51 /* en.lproj */,
+				832AD77B7473BC73FEB6C830 /* ja.lproj */,
+				72CC83BB39421900F6C3FBEF /* it.lproj */,
+				0347BD9D403D17CF17A540E3 /* ja.lproj */,
+				D234312863725D278E1302F2 /* ko.lproj */,
+				091DD962F212A00311A51DB2 /* nl.lproj */,
+				195163644C37817502302B3B /* no.lproj */,
+				4A1615996BD47DDEECDA9381 /* ar.lproj */,
+				AAAB9C5993E77453C9F4056A /* bg.lproj */,
+				F43566196129CC998D0215FD /* cs.lproj */,
+				314E80F4A49FD7D4F3F02712 /* da.lproj */,
+				D63C27641AAE939BE6B744F8 /* de.lproj */,
+				16409058D5E27F972179B3AC /* en.lproj */,
+				A3C4913E162159C2A0139545 /* es.lproj */,
+				1E5C1DDC4430EBC2E6C3BC55 /* fi.lproj */,
+				3D19CA3C01D4ACD382C923D9 /* fr.lproj */,
+				34AD4F5BE267815C07741432 /* gre.lproj */,
+				BBD0AB1841BEFCDA7084862C /* he.lproj */,
+				FB68C262D035D0DF0EAC1A71 /* hu.lproj */,
+				B6AAD58CBD033D31DBAB7518 /* it.lproj */,
+				13844FE4FC180788B0583EF5 /* ja.lproj */,
+				6740F59D9D45AFE344E57C15 /* ko.lproj */,
+				EA42CC1CB7ECBAF1B35E9D20 /* lv.lproj */,
+				B17417FBC3CAE8304EDEB7E0 /* nb.lproj */,
+				4B6843E7371376821313F8D5 /* nl.lproj */,
+				35BACB84E902466BB230A65F /* pl.lproj */,
+				563330D2AAFD8EC09A330841 /* pt.lproj */,
+				56750971DA604A531A358721 /* ro.lproj */,
+				B980A3D3930D55E9825A9CCA /* ru.lproj */,
+				DC96536975956A3EB8E6C14B /* sv.lproj */,
+				AB68D9F81A8B78641FC77E25 /* th.lproj */,
+				6CE565801F874C9130DB6DB6 /* tr.lproj */,
+				28FBBB6CCB8539EEC450CBF6 /* vi.lproj */,
+				01B26296FD6382C18417BBAF /* zh_Hans.lproj */,
+				FB724043C744568A86579532 /* zh_Hant.lproj */,
+				CC67F0AFBCA6974CDB0472CA /* pl.lproj */,
+				84DFC50FA474564B3B7CAC12 /* pt.lproj */,
+				6222CB3340217F9A3A5F5097 /* ru.lproj */,
+				AF8E11C85CF07594C53B217D /* sk.lproj */,
+				B95E55562EAA97DCE3574C61 /* sv.lproj */,
+				A3CE416D7CF3D71985068C83 /* vi.lproj */,
+				4022DE2599E8C86027A45985 /* zh_CN.lproj */,
+			);
+			name = Resources;
+			path = vendor/Pods/Resources;
+			sourceTree = "<group>";
+		};
+		9BEB96963C2E1599A46A5F68 = {
+			isa = PBXGroup;
+			children = (
+				A7F4AFD4670EC7B441793DA1 /* Products */,
+				B0AA074576C97E6786544599 /* Frameworks */,
+				D577D73F5B1DD2A3309AB44C /* Supporting Files */,
+				7FB6F39238F3D157DBF9BD4D /* Pods */,
+				826E6BEF70FF68625A1453AB /* Resources */,
+			);
+			sourceTree = "<group>";
+		};
+		A7F4AFD4670EC7B441793DA1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D637EA9B1FAF854CA44C4E64 /* libib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B0AA074576C97E6786544599 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E3067A8214558A8F2DF1AB0C /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D577D73F5B1DD2A3309AB44C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				15DFDD41C202F4CC8618ECF0 /* Stubs.h */,
+				CA5273778F4089A18217284C /* Stubs.m */,
+			);
+			name = "Supporting Files";
+			path = /Users/Yusuke/src/github.com/ysk1031/Pokebu/ib.xcodeproj;
+			sourceTree = "<group>";
+		};
+		E3067A8214558A8F2DF1AB0C /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				8FE676DD66F29A60436F632F /* Foundation.framework */,
+				191E850BBBBBBF4E807003D7 /* QuartzCore.framework */,
+				F4C317832E4465157D00AB1D /* CoreGraphics.framework */,
+				25901D65084427914A202A8C /* CoreData.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6AB85561740345DF5F14B941 /* ib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5121CEFE6989A28FB16386EB /* Build configuration list for PBXNativeTarget "ib" */;
+			buildPhases = (
+				42B78ED81B78485FFD185BF7 /* Sources */,
+				38FCF0622704C80071C8EA13 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ib;
+			productName = ib;
+			productReference = D637EA9B1FAF854CA44C4E64 /* libib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		64F88AE4EB586E4A3F7C9F30 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = CF38CA4751AD1C4DCA1BCA94 /* Build configuration list for PBXProject "ib" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9BEB96963C2E1599A46A5F68;
+			productRefGroup = A7F4AFD4670EC7B441793DA1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6AB85561740345DF5F14B941 /* ib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		42B78ED81B78485FFD185BF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82568B176640378800A53891 /* Stubs.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2047567AB114DC63EA937658 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6A99E48A50982CEFE429C680 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		95D71B1F8F22C0FCFBF02F75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		E3BBBDD3596CBFAB97A0035E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5121CEFE6989A28FB16386EB /* Build configuration list for PBXNativeTarget "ib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95D71B1F8F22C0FCFBF02F75 /* Release */,
+				6A99E48A50982CEFE429C680 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF38CA4751AD1C4DCA1BCA94 /* Build configuration list for PBXProject "ib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3BBBDD3596CBFAB97A0035E /* Debug */,
+				2047567AB114DC63EA937658 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 64F88AE4EB586E4A3F7C9F30 /* Project object */;
+}
