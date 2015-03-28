@@ -23,10 +23,10 @@ class AboutAppController < UIViewController
 
 <html>
 <head>
-  <title>Pokebu</title>
+  <title>PokeBu</title>
 
-	<meta charset="utf-8">
-	<meta name="format" content="complete">
+  <meta charset="utf-8">
+  <meta name="format" content="complete">
   <style type="text/css">
     html {
         /* the line height value of 1.9 is fixed for a line height multiple of 1.4 in the text view */
@@ -120,12 +120,12 @@ class AboutAppController < UIViewController
 
     /**
      *
-    	Paragraphs
+      Paragraphs
      *
      */
 
     p {
-    	margin: 0 0 1.5em;
+      margin: 0 0 1.5em;
     }
 
     /**
@@ -144,13 +144,13 @@ class AboutAppController < UIViewController
 
     /**
      *
-    	Code Blocks
+      Code Blocks
      *
      */
 
     pre code {
-    	word-wrap: normal;
-    	white-space: pre-wrap;
+      word-wrap: normal;
+      white-space: pre-wrap;
         border: none;
         padding: 0;
         background-color: transparent;
@@ -158,7 +158,7 @@ class AboutAppController < UIViewController
     }
 
     pre {
-    	white-space: pre-wrap;
+      white-space: pre-wrap;
         width: 96%;
         margin-bottom: 24px;
         overflow: hidden;
@@ -169,8 +169,8 @@ class AboutAppController < UIViewController
     }
 
     code {
-    	white-space: nowrap;
-    	font-family: monospace;
+      white-space: nowrap;
+      font-family: monospace;
         padding: 2px;
         -webkit-border-radius: 3px;
         background-color: #eee;
@@ -178,7 +178,7 @@ class AboutAppController < UIViewController
     }
 
     small {
-    	font-size: 65%;
+      font-size: 65%;
     }
 
     /**
@@ -188,12 +188,12 @@ class AboutAppController < UIViewController
      */
 
     dt {
-    	display: inline;
+      display: inline;
         font-weight:bold;
     }
 
     dd {
-    	display: block;
+      display: block;
     }
 
     /**
@@ -461,7 +461,7 @@ class AboutAppController < UIViewController
 <body>
   <div id="wrapper">
     <div id="content">
-      <h1>Pokebu</h1>
+      <h1>PokeBu</h1>
 
       <p>Pocketに保存したアイテムのリーダーアプリです。</p>
 
