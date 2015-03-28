@@ -34,6 +34,7 @@ Motion::Project::App.setup do |app|
       'CFBundleURLSchemes' => ['pocketapp32674']
     }
   ]
+  app.info_plist['UILaunchStoryboardName'] = 'Launch Screen'
 
   app.pods do
     pod 'AFNetworking'
