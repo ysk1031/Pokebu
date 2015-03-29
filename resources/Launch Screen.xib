@@ -10,7 +10,7 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="44M-g1-xOx">
+                <navigationBar contentMode="scaleToFill" misplaced="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44M-g1-xOx">
                     <rect key="frame" x="0.0" y="13" width="480" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="64" id="zJ4-AF-pVb"/>
