@@ -159,7 +159,7 @@ class PocketItemView < UIScrollView
   def linkAttributes
     {
       KCTUnderlineStyleAttributeName => NSNumber.numberWithInt(KCTUnderlineStyleNone),
-      KCTForegroundColorAttributeName => UIColor.themeColorGreen
+      KCTForegroundColorAttributeName => UIColor.themeColorLightGreen
     }
   end
 
