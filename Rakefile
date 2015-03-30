@@ -19,6 +19,10 @@ Motion::Project::App.setup do |app|
   app.deployment_target = '7.0'
   app.identifier = 'io.github.ysk1031.Pokebu'
 
+  app.icons = ["Icon-60@2x.png", "Icon-60@3x.png"]
+
+  app.interface_orientations = [:portrait]
+
   app.development do
     app.provisioning_profile = "/Users/Yusuke/ios-dev/PokebuDev.mobileprovision"
     app.codesign_certificate = "iPhone Developer: YUSUKE AONO (E9UARVFJU9)"
