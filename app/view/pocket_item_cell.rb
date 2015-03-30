@@ -8,13 +8,13 @@ class PocketItemCell < UITableViewCell
   def self.setItemContent(item, inTableView: tableView)
     cell = tableView.dequeueReusableCellWithIdentifier(ITEM_CELL_ID) ||
       self.alloc.initWithStyle(UITableViewCellStyleSubtitle, reuseIdentifier: ITEM_CELL_ID)
-    cell.updateViewForItem item
+    cell.updateViewForItem item, tableView: tableView
 
     cell
   end
 
   def initWithStyle(style, reuseIdentifier: cellID)
-    super
+    super(style, reuseIdentifier: cellID)
 
     # favicon
     @faviconView = UIImageView.new.tap{|v| v.frame = [[10, 10], [16, 16]] }
@@ -37,7 +37,7 @@ class PocketItemCell < UITableViewCell
     self
   end
 
-  def updateViewForItem(item)
+  def updateViewForItem(item, tableView: tableView)
     item.url =~ %r{\Ahttps?://((\w|-|.)+?)/}
     url_domain = $1
 
@@ -51,7 +51,7 @@ class PocketItemCell < UITableViewCell
     titleLabelOriginX = @faviconView.right + 6
     @titleLabel.frame = [
       [titleLabelOriginX, 10],
-      [self.frame.size.width - titleLabelOriginX - 5, 100]
+      [tableView.frame.size.width - titleLabelOriginX - 5, 100]
     ]
     @titleLabel.text = item.title
     @titleLabel.numberOfLines = 2
@@ -60,7 +60,7 @@ class PocketItemCell < UITableViewCell
     # URL
     @urlLabel.frame = [
       [titleLabelOriginX, @titleLabel.bottom + 1],
-      [self.frame.size.width - titleLabelOriginX - 50, 100]
+      [tableView.frame.size.width - titleLabelOriginX - 50, 100]
     ]
     @urlLabel.text = url_domain
     @urlLabel.numberOfLines = 1
