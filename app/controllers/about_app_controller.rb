@@ -467,7 +467,16 @@ class AboutAppController < UIViewController
 
       <p>今のところ、シンプルな機能しかありません。未読記事を消化・アーカイブしながら、はてなブックマークのコメントを閲覧したり、ブックマーク追加したりできます。</p>
 
-      <p>ちなみに、ソースコードはRubyMotionを利用して書かれています。</p>
+      <p>
+        自分がよくやっている「Twitterで流れる情報をいったんPocketに保存 => 読了後、はてブ追加・記事のアーカイブ」
+        という作業の流れを、モバイル端末でもスムーズに行いたいと思って作りました。
+      </p>
+
+      <p>
+        ソースコードはRubyMotionを利用して書かれています。
+        Naoya Itoさん作のiOSアプリ「HBFav2」を参考にさせていただきました。<br>
+        http://hbfav.bloghackers.net
+      </p>
 
       <p>(c) 2015 Yusuke Aono</p>
 
