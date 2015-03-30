@@ -27,6 +27,14 @@ Motion::Project::App.setup do |app|
     ]
   end
 
+  app.release do
+    app.provisioning_profile = "/Users/Yusuke/ios-dev/PokeBu_release.mobileprovision"
+    app.codesign_certificate = "iPhone Distribution: YUSUKE AONO (8C9TZF26K4)"
+    app.entitlements['keychain-access-groups'] = [
+      app.seed_id + '.' + app.identifier
+    ]
+  end
+
   app.my_env.file = './config/environment.yml'
 
   app.info_plist['CFBundleURLTypes'] = [
