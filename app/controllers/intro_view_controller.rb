@@ -54,6 +54,19 @@ class IntroViewController < UIViewController
     @pocketLoginButton.setTitleColor(UIColor.whiteColor, forState: UIControlStateNormal)
 
     @pocketLoginButton.addTarget(self, action: "pocket_login", forControlEvents: UIControlEventTouchUpInside)
+
+    # NotificationCenterにオブザーバー追加
+    notificationCenter = NSNotificationCenter.defaultCenter
+    notificationCenter.addObserver(self,
+      selector: 'openPocketAuth:',
+      name:     "PokebuOpenPocketAuthNotification",
+      object:   nil
+    )
+  end
+
+  def viewDidDisappear(animated)
+    notificationCenter = NSNotificationCenter.defaultCenter
+    notificationCenter.removeObserver(self)
   end
 
   def pocket_login
@@ -66,24 +79,22 @@ class IntroViewController < UIViewController
 
           window.rootViewController = navigation_controller
         else
-          alert_pocket_login_failure error.localizedDescription
+          @pocketAuthNaviController.dismissViewControllerAnimated(true, completion: nil)
         end
       end
     )
   end
 
-  def alert_pocket_login_failure(error_message)
-    alert_controller = UIAlertController.alertControllerWithTitle(
-      'エラー',
-      message: error_message,
-      preferredStyle: UIAlertControllerStyleAlert
-    )
-    alert_action = UIAlertAction.actionWithTitle(
-      'OK',
-      style: UIAlertActionStyleDefault,
-      handler: nil
-    )
-    alert_controller.addAction(alert_action)
-    @pocket_items_controller.presentViewController(alert_controller, animated: true, completion: nil)
+  def openPocketAuth(notification)
+    webViewController = SVWebViewController.alloc.initWithAddress(notification.object.absoluteString)
+    @pocketAuthNaviController = UINavigationController.alloc.initWithRootViewController(webViewController)
+    self.presentViewController(@pocketAuthNaviController, animated: true, completion: nil)
+  end
+end
+
+class SVWebViewController
+  def viewWillAppear(animated)
+    super
+    self.navigationController.setToolbarHidden(true, animated: true)
   end
 end

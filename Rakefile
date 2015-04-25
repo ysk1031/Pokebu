@@ -47,12 +47,13 @@ Motion::Project::App.setup do |app|
     }
   ]
   app.info_plist['UILaunchStoryboardName'] = 'Launch Screen'
+  app.info_plist['NSPrincipalClass'] = 'CustomUIApplication'
 
   app.pods do
     pod 'AFNetworking'
     pod 'TTTAttributedLabel'
     pod 'HatenaBookmarkSDK', git: 'git@github.com:hatena/Hatena-Bookmark-iOS-SDK.git'
-    pod 'PocketAPI', git: 'git@github.com:ysk1031/Pocket-ObjC-SDK.git',
-      branch: 'cocoapods-dependency'
+    pod 'PocketAPI', git: 'git@github.com:Pocket/Pocket-ObjC-SDK.git'
+    pod 'SVWebViewController'
   end
 end
