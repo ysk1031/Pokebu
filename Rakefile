@@ -14,8 +14,8 @@ end
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
   app.name = 'PokeBu'
-  app.version = '1.0.1'
-  app.short_version = '1.0.1'
+  app.version = '1.0.2'
+  app.short_version = '1.0.2'
   app.deployment_target = '7.0'
   app.identifier = 'io.github.ysk1031.Pokebu'
 
