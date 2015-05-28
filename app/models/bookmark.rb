@@ -16,7 +16,7 @@ class Bookmark
             # コメント付きのみ表示
             result.object["bookmarks"].each{|data| bookmarks << self.new(data) unless data["comment"].empty? }
           elsif result.failure?
-            error_message = result.error.localizedDescription
+            error_message = result.error.localizedDescription if result.error.code.to_i != 3840
           else
             error_message = 'エラーが発生しました'
           end
