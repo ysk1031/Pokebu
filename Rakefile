@@ -14,8 +14,8 @@ end
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
   app.name = 'PokeBu'
-  app.version = '1.0.2'
-  app.short_version = '1.0.2'
+  app.version = '1.0.3'
+  app.short_version = '1.0.3'
   app.deployment_target = '7.0'
   app.identifier = 'io.github.ysk1031.Pokebu'
 
@@ -37,6 +37,7 @@ Motion::Project::App.setup do |app|
     app.entitlements['keychain-access-groups'] = [
       app.seed_id + '.' + app.identifier
     ]
+    app.entitlements['beta-reports-active'] = true
   end
 
   app.my_env.file = './config/environment.yml'
