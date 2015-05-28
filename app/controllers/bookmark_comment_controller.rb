@@ -56,8 +56,13 @@ class BookmarkCommentController < UITableViewController
   def load_bookmarks
     Bookmark.fetch_bookmarks(item.url) do |bookmarks, error|
       if error.nil?
-        @bookmarks = bookmarks
-        self.tableView.reloadData
+        if bookmarks.count > 0
+          @bookmarks = bookmarks
+          self.tableView.reloadData
+        else
+          alert_controller = UIAlertController.setNotice('ブックマークコメントがありません')
+          self.presentViewController(alert_controller, animated: true, completion: nil)
+        end
       else
         alert_controller = UIAlertController.setErrorMessage error
         self.presentViewController(alert_controller, animated: true, completion: nil)
