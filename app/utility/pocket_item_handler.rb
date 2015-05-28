@@ -8,7 +8,7 @@ module Pokebu
       )
       cancel = UIAlertAction.actionWithTitle(
         'キャンセル',
-        style: UIAlertActionStyleDefault,
+        style: UIAlertActionStyleCancel,
         handler: nil
       )
       ok = UIAlertAction.actionWithTitle(
