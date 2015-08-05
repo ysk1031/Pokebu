@@ -3,6 +3,8 @@ Pokebu
 
 Pocket reader app for iOS by RubyMotion.
 
+https://itunes.apple.com/jp/app/pokebu/id981124596
+
 ## アプリについて
 「あとで読む」サービス、Pocketの非公式クライアントアプリです。
 
